@@ -57,7 +57,35 @@ Pour lancer ce projet localement :
 
 L'architecture suit les bonnes pratiques Next.js App Router :
 
-├── app/ # Pages et Layouts (App Router) │ ├── globals.css # Styles globaux & variables CSS │ ├── layout.tsx # Structure racine (Fonts, Metadata) │ └── page.tsx # Page d'accueil (Assemblage des sections) ├── components/ │ ├── layout/ # Navbar, Footer │ ├── sections/ # Hero, Skills, Projects, Contact │ └── ui/ # Composants réutilisables (Tunnel, Spotlight, Buttons) ├── data/ │ └── content.ts # 📝 TOUTES les données (Textes, Projets) sont ici ├── lib/ │ └── utils.ts # Utilitaires (cn helper pour Tailwind) └── public/ # Images et assets statiques
+├── app/ # Pages et Layouts (App Router) 
+      │ 
+      
+      ├── globals.css # Styles globaux & variables CSS 
+      │ 
+      ├── layout.tsx # Structure racine (Fonts, Metadata) 
+      │ 
+      └── page.tsx # Page d'accueil 
+
+├── components/ 
+      │ 
+      
+      ├── layout/ # Navbar, Footer 
+      │
+      ├── sections/ # Hero, Skills, Projects, Contact 
+      │ 
+      └── ui/ # Composants réutilisables (Tunnel, Spotlight, Buttons) 
+
+├── data/ 
+      │ 
+      
+      └── content.ts # 📝 TOUTES les données (Textes, Projets) sont ici 
+      
+├── lib/ 
+      │ 
+      
+      └── utils.ts # Utilitaires (cn helper pour Tailwind) 
+      
+└── public/ # Images et assets statiques
 
 
 ## ⚙️ Personnalisation
@@ -66,7 +94,7 @@ Tout le contenu textuel est centralisé pour faciliter la modification sans touc
 
 1.  Ouvrez le fichier `data/content.ts`.
 2.  Modifiez l'objet `personalInfo` pour vos informations.
-3.  Mettez à jour le tableau `projects` pour ajouter vos vrais projets.
+3.  Mettez à jour le tableau `projects` pour ajouter vos vrais projets et des liens vers ceux déjà déployés.
 4.  Ajustez les `skills` pour le graphique radar.
 
 Exemple :
@@ -76,14 +104,16 @@ export const personalInfo = {
   role: "Développeur Full Stack",
   // ...
 };
+
+
 🔜 Roadmap (À venir)
-[ ] Remplacer les projets placeholder par les déploiements Vercel réels.
+- Remplacer les projets placeholder par les déploiements Vercel réels.
 
-[ ] Ajouter une page de blog (via MDX).
+- Ajouter une page de blog (via MDX).
 
-[ ] Intégration d'un formulaire de contact fonctionnel (ex: EmailJS ou Resend).
+- Intégration d'un formulaire de contact fonctionnel (ex: EmailJS ou Resend).
 
-[ ] Optimisation finale des assets pour un score Lighthouse de 100%.
+- Optimisation finale des assets pour un score Lighthouse de 100%.
 
 📄 Licence
 Ce projet est sous licence MIT. N'hésitez pas à l'utiliser pour votre propre portfolio !
