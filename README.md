@@ -35,7 +35,7 @@ Pour lancer ce projet localement :
 
 1.  **Cloner le dépôt :**
     ```bash
-    git clone [https://github.com/Hcarmelle7/mon-portfolio.git](https://github.com/Hcarmelle7/mon-portfolio.git)
+    git clone https://github.com/Hcarmelle7/mon-portfolio.git(https://github.com/Hcarmelle7/mon-portfolio.git)
     cd mon-portfolio
     ```
 
