@@ -1,4 +1,3 @@
-// components/sections/Hero.tsx
 "use client";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data/content";
@@ -13,25 +12,25 @@ export default function Hero() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
-        className="relative w-56 h-56 flex justify-center items-center mb-8"
+        className="relative w-50 h-50 flex justify-center items-center mb-5"
       >
-        {/* 1. L'arrière-plan liquide animé (Derrière la photo) */}
-        {/* On anime le border-radius pour créer une forme changeante */}
+        {/*  L'arrière-plan liquide animé  */}
+        {/* border-radius animé */}
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
             rotate: [0, 180, 360],
             borderRadius: [
-              "50% 50% 50% 50%",       // Cercle parfait
+              "50% 50% 50% 50%",       // Cercle 
               "30% 70% 70% 30% / 50%", // Forme ovale déformée
-              "50% 50% 50% 50%"        // Retour au cercle
+              "50% 50% 50% 50%"        // on retourne au cercle
             ]
           }}
           transition={{
-            duration: 10,
-            ease: "easeInOut",
-            repeat: Infinity,
-            repeatType: "reverse"
+            duration: 10, // Durée totale de l'animation
+            ease: "easeInOut", // Douceur de l'animation
+            repeat: Infinity, // Répéter indéfiniment
+            repeatType: "reverse" // Revenir en arrière pour une boucle fluide
           }}
           className="absolute inset-0 bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-600 blur-2xl opacity-60"
         />
@@ -43,28 +42,22 @@ export default function Hero() {
            className="absolute inset-2 rounded-full border border-white/20 border-t-purple-500/80 border-r-pink-500/80 blur-[1px]"
         />
 
-        {/* 3. Le conteneur de la photo (Devant) */}
+        {/* 3. Le conteneur de la photo doit etre devant */}
         <div className="relative z-10 w-40 h-40 rounded-full overflow-hidden border-2 border-white/20 shadow-[0_0_40px_rgba(139,92,246,0.3)] backdrop-blur-sm bg-black/30 p-1">
-           {/* Le p-1 crée un petit espace entre la bordure et l'image */}
            <div className="w-full h-full rounded-full overflow-hidden relative">
-             {/* REMPLACE CECI PAR TA VRAIE PHOTO */}
-             {/* Utilise next/image en production: <Image src="/ton-image.jpg" alt="Profile" fill className="object-cover" /> */}
              <img 
-               src= {personalInfo.image} // Exemple (image GitHub générique)
+               src= {personalInfo.image}
                alt="Profile Placeholder" 
                className="object-cover w-full h-full scale-105 hover:scale-110 transition-transform duration-500" 
              />
            </div>
         </div>
       </motion.div>
-      {/* ----------------------------------------- */}
 
-
-      {/* Textes (Reste inchangé) */}
       <motion.h1 
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.2 }}
+        initial={{ y: 20, opacity: 0 }} // Animation d'entrée : glisse vers le haut et fade in
+        animate={{ y: 0, opacity: 1 }} // Position finale : à sa place normale et complètement visible
+        transition={{ delay: 0.2 }} // Délai avant le début de l'animation pour un effet de cascade
         className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-100 to-white/60 mb-4"
       >
         {personalInfo.name}
@@ -81,6 +74,7 @@ export default function Hero() {
         </span>
       </motion.h2>
 
+
       <motion.p 
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -88,15 +82,15 @@ export default function Hero() {
         className="max-w-xl text-gray-400 mb-10 leading-relaxed md:text-lg"
       >
         {personalInfo.bio}
-      </motion.p>
+      </motion.p> 
 
-      {/* Actions (Légèrement retravaillé pour le style) */}
       <motion.div 
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5 }}
         className="flex flex-col md:flex-row gap-6 items-center"
       >
+        {/* Bouton d'appel à l'action pour voir les projets */}
         <a href="#projects" className="px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-full font-medium transition-all flex items-center gap-2 group shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5">
           Voir mes projets
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

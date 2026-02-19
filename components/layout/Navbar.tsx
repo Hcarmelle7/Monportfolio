@@ -33,12 +33,10 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo / Nom */}
         <a href="#" className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
           Carmelle<span className="text-white">.dev</span>
         </a>
 
-        {/* Liens Desktop */}
         <ul className="hidden md:flex gap-8">
           {links.map((link) => (
             <li key={link.name}>
@@ -53,7 +51,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Bouton Call to Action */}
         <a 
           href="#contact"
           className="px-4 py-2 text-sm font-medium bg-white/10 hover:bg-purple-600 border border-white/10 rounded-full transition-all hover:scale-105"
