@@ -1,9 +1,9 @@
-// components/sections/Contact.tsx
 "use client";
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, Github, FileText } from 'lucide-react';
 import SpotlightCard from '../ui/SpotlighCard';
 
+//liens utiles pour me contacter : email, linkedin, github, cv
 export default function Contact() {
   const contactOptions = [
     {
@@ -20,12 +20,24 @@ export default function Contact() {
       href: "https://linkedin.com/in/carmelle-helle",
       color: "from-blue-600 to-blue-800"
     },
-    // Ajoute GitHub ou CV ici si tu veux
+    {
+      icon: <Github className="w-6 h-6" />,
+      label: "GitHub",
+      value: "Voir mon profil",
+      href: "https://github.com/Hcarmelle7",
+      color: "from-gray-700 to-gray-900"
+    },
+    // {
+    //   icon: <FileText className="w-6 h-6" />,
+    //   label: "CV",
+    //   value: "Télécharger mon CV",
+    //   href: "/carmelle-helle-cv.pdf",
+    //   color: "from-purple-600 to-purple-800"
+    // }
   ];
 
   return (
     <section className="py-24 px-4 relative overflow-hidden" id="contact">
-      {/* Fond décoratif */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10 text-center">

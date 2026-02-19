@@ -1,4 +1,3 @@
-// components/sections/Projects.tsx
 "use client";
 import { projects } from '@/data/content';
 import { motion } from 'framer-motion';
@@ -12,7 +11,7 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="text-center mb-12"
             >
                 <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-white">
                     Mes Réalisations

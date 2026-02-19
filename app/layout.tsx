@@ -10,7 +10,7 @@ import TunnelBackground from "@/components/ui/TunnelBackground";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ton Nom | Développeur Full Stack",
+  title: "Carmelle.dev | Développeur Full Stack",
   description: "Portfolio de développeur web & mobile spécialisé en React, Node.js et Flutter.",
 };
 

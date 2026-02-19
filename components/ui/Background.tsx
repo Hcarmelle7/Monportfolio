@@ -1,4 +1,3 @@
-// components/ui/Background.tsx
 "use client";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -6,7 +5,7 @@ import { useEffect, useState } from "react";
 // Fonction utilitaire pour générer un nombre aléatoire entre min et max
 const random = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
 
-// Définition des couleurs "fluo" de ta palette
+// Définition des couleurs "fluo" pour les carrés
 const colors = [
   "bg-purple-600",
   "bg-fuchsia-600",
@@ -16,9 +15,6 @@ const colors = [
 ];
 
 export default function Background() {
-  // On utilise un state pour s'assurer que les valeurs aléatoires 
-  // sont générées uniquement côté client après le premier rendu.
-  // Cela évite les erreurs d'hydratation avec Next.js (le serveur et le client doivent voir la même chose au début).
   const [squares, setSquares] = useState<any[]>([]);
 
   useEffect(() => {
@@ -27,12 +23,9 @@ export default function Background() {
       id: i,
       // Taille entre 50px et 150px
       size: random(50, 150),
-      // Position de départ aléatoire sur l'écran (en pourcentage)
       initialX: random(0, 100),
       initialY: random(0, 100),
-      // Couleur aléatoire parmi la liste
-      color: colors[random(0, colors.length - 1)],
-      // Durée de l'animation (entre 20 et 40 secondes pour un mouvement lent)
+      color: colors[random(0, colors.length - 1)], // Couleur aléatoire parmi la palette
       duration: random(20, 40),
       // Délai avant le début pour qu'ils ne partent pas tous en même temps
       delay: random(0, 5),
@@ -42,7 +35,6 @@ export default function Background() {
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-[#0a0a0a]">
-      {/* Couche de base pour assombrir légèrement */}
       <div className="absolute inset-0 bg-black/60" />
 
       {squares.map((sq) => (
