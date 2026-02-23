@@ -1,4 +1,3 @@
-// components/layout/Navbar.tsx
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -7,7 +6,7 @@ import { cn } from '@/lib/utils';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
-  // Détecte le scroll pour changer l'apparence de la navbar
+  // le useEffect détecte le scroll pour changer la navbar
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -18,8 +17,10 @@ export default function Navbar() {
 
   const links = [
     { name: 'Accueil', href: '#' },
+    { name: 'Profile', href: '#about' },
     { name: 'Compétences', href: '#skills' },
     { name: 'Projets', href: '#projects' },
+    { name: 'Formation', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -33,10 +34,12 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Logo */}
         <a href="#" className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
           Carmelle<span className="text-white">.dev</span>
         </a>
 
+        {/* Liens de navigation */}
         <ul className="hidden md:flex gap-8">
           {links.map((link) => (
             <li key={link.name}>
@@ -51,6 +54,7 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* Bouton de contact */}
         <a 
           href="#contact"
           className="px-4 py-2 text-sm font-medium bg-white/10 hover:bg-purple-600 border border-white/10 rounded-full transition-all hover:scale-105"
