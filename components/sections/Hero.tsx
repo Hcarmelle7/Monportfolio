@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { personalInfo } from "@/data/content";
+import { AboutMe } from "@/data/content";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="relative z-10 w-40 h-40 rounded-full overflow-hidden border-2 border-white/20 shadow-[0_0_40px_rgba(139,92,246,0.3)] backdrop-blur-sm bg-black/30 p-1">
            <div className="w-full h-full rounded-full overflow-hidden relative">
              <img 
-               src= {personalInfo.image}
+               src= {AboutMe.image}
                alt="Profile Placeholder" 
                className="object-cover w-full h-full scale-105 hover:scale-110 transition-transform duration-500" 
              />
@@ -60,7 +60,7 @@ export default function Hero() {
         transition={{ delay: 0.2 }} // Délai avant le début de l'animation pour un effet de cascade
         className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-100 to-white/60 mb-4"
       >
-        {personalInfo.name}
+        {AboutMe.name}
       </motion.h1>
 
       <motion.h2 
@@ -70,7 +70,7 @@ export default function Hero() {
         className="text-xl md:text-2xl text-purple-400 font-medium mb-6"
       >
         <span className="bg-purple-500/10 px-4 py-2 rounded-full border border-purple-500/20">
-          {personalInfo.role}
+          {AboutMe.role}
         </span>
       </motion.h2>
 
@@ -81,7 +81,7 @@ export default function Hero() {
         transition={{ delay: 0.4 }}
         className="max-w-xl text-gray-400 mb-10 leading-relaxed md:text-lg"
       >
-        {personalInfo.bio}
+        {AboutMe.bio}
       </motion.p> 
 
       <motion.div 
@@ -97,11 +97,11 @@ export default function Hero() {
         </a>
         
         <div className="flex gap-4 items-center border border-white/10 px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm">
-          <a href={personalInfo.socials.github} className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"><Github size={20} /></a>
+          <a href={AboutMe.socials.github} className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"><Github size={20} /></a>
           <div className="w-px h-4 bg-white/10"></div>
-          <a href={personalInfo.socials.linkedin} className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"><Linkedin size={20} /></a>
+          <a href={AboutMe.socials.linkedin} className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"><Linkedin size={20} /></a>
           <div className="w-px h-4 bg-white/10"></div>
-          <a href={personalInfo.socials.email} className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"><Mail size={20} /></a>
+          <a href={AboutMe.socials.email} className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"><Mail size={20} /></a>
         </div>
       </motion.div>
     </section>

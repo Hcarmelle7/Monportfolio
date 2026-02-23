@@ -1,8 +1,7 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Background from "@/components/ui/Background"; // N'oublie pas l'import
+import Background from "@/components/ui/Background";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import TunnelBackground from "@/components/ui/TunnelBackground";
@@ -22,7 +21,6 @@ export default function RootLayout({
   return (
     <html lang="fr" className="dark">
       <body className={inter.className}>
-        {/* Fond animé présent sur toutes les pages */}
         <Background />
         {/* <TunnelBackground /> */}
         

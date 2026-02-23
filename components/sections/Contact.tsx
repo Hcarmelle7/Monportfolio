@@ -27,13 +27,13 @@ export default function Contact() {
       href: "https://github.com/Hcarmelle7",
       color: "from-gray-700 to-gray-900"
     },
-    // {
-    //   icon: <FileText className="w-6 h-6" />,
-    //   label: "CV",
-    //   value: "Télécharger mon CV",
-    //   href: "/carmelle-helle-cv.pdf",
-    //   color: "from-purple-600 to-purple-800"
-    // }
+    {
+      icon: <FileText className="w-6 h-6" />,
+      label: "CV",
+      value: "Télécharger mon CV",
+      href: "/carmelle-helle-cv.pdf",
+      color: "from-purple-600 to-purple-800"
+    }
   ];
 
   return (

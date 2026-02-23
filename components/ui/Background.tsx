@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// Fonction utilitaire pour générer un nombre aléatoire entre min et max
+// Fonction utilitaire pour générer un nombre aléatoire entre min et max 
 const random = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
 
-// Définition des couleurs "fluo" pour les carrés
+// Définition des couleurs "fluo" pour les carrés 
 const colors = [
   "bg-purple-600",
   "bg-fuchsia-600",
@@ -67,23 +67,20 @@ export default function Background() {
               `${random(-50, 50)}vh`, 
               `0vh`
             ],
-            // Rotation lente pendant le mouvement
+            // Rotation lente pendant le mouvement pour ajouter du dynamisme
             rotate: [0, 180, 360],
-            // Légère variation d'échelle (pulsation)
+            // Légère variation d'échelle pour simuler un effet de "respiration" lumineuse
             scale: [1, 1.2, 0.9, 1]
           }}
           transition={{
             duration: sq.duration,
             ease: "easeInOut",
             repeat: Infinity, // Boucle infinie
-            repeatType: "reverse", // Fait l'animation dans un sens puis dans l'autre
+            repeatType: "reverse", // Fait l'animation dans un sens puis dans l'autre 
             delay: sq.delay,
           }}
         />
       ))}
-      
-      {/* Optionnel: Un léger bruit de fond pour un aspect plus texturé/analologique */}
-      <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
     </div>
   );
 }
