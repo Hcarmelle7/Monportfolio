@@ -5,6 +5,7 @@ import Background from "@/components/ui/Background";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import TunnelBackground from "@/components/ui/TunnelBackground";
+import { ProfileProvider } from "@/context/ProfileContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,12 +25,18 @@ export default function RootLayout({
         <Background />
         {/* <TunnelBackground /> */}
         
-        <Navbar />
         
-        <main className="flex flex-col min-h-screen mt-20">
-          {children}
-        </main>
-        
+       <ProfileProvider>
+          
+          {/* La Navbar a maintenant accès au contexte ! */}
+          <Navbar />
+          
+          {/* Les pages en dessous ont aussi accès au contexte ! */}
+          <main>
+            {children}
+          </main>
+
+        </ProfileProvider>
         <Footer />
       </body>
     </html>

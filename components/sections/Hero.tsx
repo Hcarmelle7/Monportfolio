@@ -5,17 +5,15 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 relative ">
-      
+    <section className="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 relative  gap-4">
+
       {/* --- NOUVELLE ANIMATION PHOTO DE PROFIL --- */}
-      <motion.div 
+      <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
-        className="relative w-50 h-50 flex justify-center items-center mb-5"
+        className="relative w-40 h-40 flex justify-center items-center mb-2"
       >
-        {/*  L'arrière-plan liquide animé  */}
-        {/* border-radius animé */}
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
@@ -37,24 +35,24 @@ export default function Hero() {
 
         {/* 2. Un deuxième cercle plus fin qui tourne en sens inverse pour la complexité */}
         <motion.div
-           animate={{ rotate: [360, 0] }}
-           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-           className="absolute inset-2 rounded-full border border-white/20 border-t-purple-500/80 border-r-pink-500/80 blur-[1px]"
+          animate={{ rotate: [360, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-2 rounded-full border border-white/20 border-t-purple-500/80 border-r-pink-500/80 blur-[1px]"
         />
 
         {/* 3. Le conteneur de la photo doit etre devant */}
-        <div className="relative z-10 w-40 h-40 rounded-full overflow-hidden border-2 border-white/20 shadow-[0_0_40px_rgba(139,92,246,0.3)] backdrop-blur-sm bg-black/30 p-1">
-           <div className="w-full h-full rounded-full overflow-hidden relative">
-             <img 
-               src= {AboutMe.image}
-               alt="Profile Placeholder" 
-               className="object-cover w-full h-full scale-105 hover:scale-110 transition-transform duration-500" 
-             />
-           </div>
+        <div className="relative z-10 w-30 h-30 rounded-full overflow-hidden border-2 border-white/20 shadow-[0_0_40px_rgba(139,92,246,0.3)] backdrop-blur-sm bg-black/30 p-1">
+          <div className="w-full h-full rounded-full overflow-hidden relative">
+            <img
+              src={AboutMe.image}
+              alt="Profile Placeholder"
+              className="object-cover w-full h-full scale-105 hover:scale-110 transition-transform duration-500"
+            />
+          </div>
         </div>
       </motion.div>
 
-      <motion.h1 
+      <motion.h1
         initial={{ y: 20, opacity: 0 }} // Animation d'entrée : glisse vers le haut et fade in
         animate={{ y: 0, opacity: 1 }} // Position finale : à sa place normale et complètement visible
         transition={{ delay: 0.2 }} // Délai avant le début de l'animation pour un effet de cascade
@@ -63,26 +61,26 @@ export default function Hero() {
         {AboutMe.name}
       </motion.h1>
 
-      <motion.h2 
+      <motion.h2
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="text-xl md:text-2xl text-purple-400 font-medium mb-6"
+        // J'ai ajouté "leading-relaxed" pour aérer l'espace entre les lignes quand ça se superpose
+        className="text-xl md:text-2xl w-full text-purple-400 font-medium mb-4 leading-relaxed"
       >
-        <span className="bg-purple-500/10 px-4 py-2 rounded-full border border-purple-500/20">
+        <span className="inline-block break-words bg-purple-500/10 px-5 py-2.5 rounded-2xl border border-purple-500/20">
           {AboutMe.role}
         </span>
       </motion.h2>
 
-
-      <motion.p 
+      {/* <motion.p 
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.4 }}
         className="max-w-xl text-gray-400 mb-10 leading-relaxed md:text-lg"
       >
         {AboutMe.bio}
-      </motion.p> 
+      </motion.p>  */}
 
       <motion.div 
         initial={{ y: 20, opacity: 0 }}
@@ -104,6 +102,7 @@ export default function Hero() {
           <a href={AboutMe.socials.email} className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"><Mail size={20} /></a>
         </div>
       </motion.div>
+      
     </section>
   );
 }

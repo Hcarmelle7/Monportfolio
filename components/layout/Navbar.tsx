@@ -2,9 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { AboutMe } from '@/data/content';
+import { Code2, Cpu, Github, Linkedin, Mail, } from 'lucide-react';
+import { useProfile } from "@/context/ProfileContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const { profile, setProfile } = useProfile();
 
   // le useEffect détecte le scroll pour changer la navbar
   useEffect(() => {
@@ -43,8 +47,8 @@ export default function Navbar() {
         <ul className="hidden md:flex gap-8">
           {links.map((link) => (
             <li key={link.name}>
-              <a 
-                href={link.href} 
+              <a
+                href={link.href}
                 className="text-sm font-medium text-gray-300 hover:text-white hover:text-primary transition-colors relative group"
               >
                 {link.name}
@@ -54,13 +58,52 @@ export default function Navbar() {
           ))}
         </ul>
 
+        <div className="relative flex items-center p-1 bg-white/5 border border-white/10 rounded-full shadow-lg">
+
+          {/* Option Développeur */}
+          <button
+            onClick={() => setProfile("developer")}
+            className={`relative z-10 flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 ${profile === "developer" ? "text-white" : "text-gray-400 hover:text-white"
+              }`}
+          >
+            {profile === "developer" && (
+              <motion.div
+                layoutId="nav-switch-pill" // La magie Framer Motion
+                className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full -z-10 shadow-[0_0_15px_rgba(168,85,247,0.4)]"
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              />
+            )}
+            <Code2 className="w-4 h-4" />
+            <span className="hidden sm:inline">Développeur</span>
+          </button>
+
+          {/* Option Ingénierie */}
+          <button
+            onClick={() => setProfile("embedded")}
+            className={`relative z-10 flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 ${profile === "embedded" ? "text-white" : "text-gray-400 hover:text-white"
+              }`}
+          >
+            {profile === "embedded" && (
+              <motion.div
+                layoutId="nav-switch-pill"
+                className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-emerald-600 rounded-full -z-10 shadow-[0_0_15px_rgba(6,182,212,0.4)]"
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              />
+            )}
+            <Cpu className="w-4 h-4" />
+            <span className="hidden sm:inline">Ingénierie</span>
+          </button>
+
+        </div>
+
         {/* Bouton de contact */}
-        <a 
-          href="#contact"
-          className="px-4 py-2 text-sm font-medium bg-white/10 hover:bg-purple-600 border border-white/10 rounded-full transition-all hover:scale-105"
-        >
-          Me contacter
-        </a>
+        <div className="flex gap-4 items-center border border-white/10 px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm hidden ">
+          <a href={AboutMe.socials.github} className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"><Github size={20} /></a>
+          <div className="w-px h-4 bg-white/10"></div>
+          <a href={AboutMe.socials.linkedin} className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"><Linkedin size={20} /></a>
+          <div className="w-px h-4 bg-white/10"></div>
+          <a href={AboutMe.socials.email} className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"><Mail size={20} /></a>
+        </div>
       </div>
     </motion.nav>
   );
