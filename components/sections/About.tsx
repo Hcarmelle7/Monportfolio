@@ -23,6 +23,7 @@ export default function About() {
   const x = useTransform(progress, [0, 400], ["386px", "0px"]);
   const scale = useTransform(progress, [0, 400], [0, 1]);
   const borderRadius = useTransform(progress, [0, 400], ["999px", "16px"]);
+
     return (
         <section id="about" className="py-24 px-4 relative max-w-6xl mx-auto z-10">
             <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-start">
@@ -57,7 +58,7 @@ export default function About() {
                         {about.title}
                     </h2>
 
-                    <div className="space-y-6 text-gray-300 leading-relaxed">
+                    <div className="space-y-6 text-gray-300 text-justify leading-relaxed">
                         {about.description.map((paragraph, index) => (
                             <p key={index}>{paragraph}</p>
                         ))}

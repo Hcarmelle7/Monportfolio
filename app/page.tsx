@@ -20,26 +20,28 @@ import EmbeddedEducation from "@/components/sections/EmbeddedEducation.tsx";
 import DeveloperProfile from "./developper/page";
 import EmbeddedProfile from "./embedded/page";
 import About from "@/components/sections/About";
+import { useProfile } from "@/context/ProfileContext";
+
 
 export default function Home() {
   const [activeProfile, setActiveProfile] = useState<"developer" | "embedded">("developer");
+  const { profile } = useProfile();
 
   return (
     <div className="flex flex-col gap-20 md:gap-12 pb-8">
 
-      <div className="min-h-[80vh] flex flex-col items-center justify-center gap-12 px-4 ">
+      <div className="min-h-[80vh] flex flex-col items-center justify-center gap-2 px-4 ">
+
         <Hero />
 
-        <About/>
-
-        <div className="flex flex-col sm:flex-row gap-6 mt-8 z-10">
+        <div className="flex flex-col hidden md:block sm:flex-row gap-6  z-10">
 
           {/* BOUTON DÉVELOPPEUR */}
           <button
             onClick={() => setActiveProfile("developer")}
             className={`group relative px-8 py-4 rounded-2xl border transition-all overflow-hidden flex items-center gap-4 text-left ${activeProfile === "developer"
-                ? "bg-purple-500/10 border-purple-500 shadow-[0_0_30px_rgba(168,85,247,0.2)] scale-105"
-                : "bg-white/5 border-purple-500/30 hover:bg-white/10 hover:border-purple-500"
+              ? "bg-purple-500/10 border-purple-500 shadow-[0_0_30px_rgba(168,85,247,0.2)] scale-105"
+              : "bg-white/5 border-purple-500/30 hover:bg-white/10 hover:border-purple-500"
               }`}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -54,8 +56,8 @@ export default function Home() {
           <button
             onClick={() => setActiveProfile("embedded")}
             className={`group relative px-8 py-4 rounded-2xl border transition-all overflow-hidden flex items-center gap-4 text-left ${activeProfile === "embedded"
-                ? "bg-cyan-500/10 border-cyan-500 shadow-[0_0_30px_rgba(6,182,212,0.2)] scale-105"
-                : "bg-white/5 border-cyan-500/30 hover:bg-white/10 hover:border-cyan-500"
+              ? "bg-cyan-500/10 border-cyan-500 shadow-[0_0_30px_rgba(6,182,212,0.2)] scale-105"
+              : "bg-white/5 border-cyan-500/30 hover:bg-white/10 hover:border-cyan-500"
               }`}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -68,11 +70,11 @@ export default function Home() {
 
         </div>
       </div>
-
+      <About />
       {/* Le Contenu principal change selon le profil sélectionné */}
       <div className="min-h-screen">
         <AnimatePresence mode="wait">
-          {activeProfile === "developer" && (
+          {profile === "developer" && (
             <motion.div
               key="developer-content"
               initial={{ opacity: 0, y: 20 }}
@@ -85,7 +87,7 @@ export default function Home() {
             </motion.div>
           )}
 
-          {activeProfile === "embedded" && (
+          {profile === "embedded" && (
             <motion.div
               key="embedded-content"
               initial={{ opacity: 0, y: 20 }}

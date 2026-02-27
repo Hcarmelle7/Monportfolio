@@ -83,7 +83,7 @@ export const devProjects = {
             description: "Développement Front-end complet d'une application mobile. Gestion d'état complexe et optimisation des performances.",
             tech: ["Flutter", "Dart", "Firebase"],
             link: "#",
-            image: "/images/Learnify_logo_purple.png"
+            image: "/images/learnify.png"
         },
         {
             id: 2,
