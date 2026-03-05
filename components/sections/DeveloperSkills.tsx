@@ -3,23 +3,24 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { DeveloperSkills } from '@/data/content';
 import { motion } from 'framer-motion';
+import DevStack from './Stack';
 
 export default function Skills() {
   return (
     <section className="py-20 px-4 max-w-6xl mx-auto" id="skills">
       <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-16 text-center lg:text-left"
-            >
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
-                {DeveloperSkills.title}
-              </h2>
-              <p className="text-gray-400 text-lg">{DeveloperSkills.subtitle}</p>
-              <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-6 mx-auto lg:mx-0"></div>
-            </motion.div>
-      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-2 text-center lg:text-left"
+      >
+        <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
+          {DeveloperSkills.title}
+        </h2>
+        <p className="text-gray-400 text-lg">{DeveloperSkills.subtitle}</p>
+        <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-6 mx-auto lg:mx-0"></div>
+      </motion.div>
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -56,6 +57,7 @@ export default function Skills() {
           </ResponsiveContainer>
         </div>
       </motion.div>
+      <DevStack/>
     </section>
   );
 }

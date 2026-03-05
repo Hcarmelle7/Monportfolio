@@ -34,7 +34,7 @@ export default function Home() {
 
         <Hero />
 
-        <div className="flex flex-col hidden md:block sm:flex-row gap-6  z-10">
+        <div className="flex flex-row hidden md:hidden sm:flex-row gap-6  z-10">
 
           {/* BOUTON DÉVELOPPEUR */}
           <button

@@ -15,7 +15,7 @@ export default function HardwareProjects() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mb-16"
+        className="mb-8"
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-500">
           {hardwareProjects.title}
@@ -63,7 +63,7 @@ export default function HardwareProjects() {
 
             <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
               {project.techStack.map((tech, idx) => (
-                <span key={idx} className="text-xs font-medium text-gray-300 bg-white/5 px-3 py-1.5 rounded-md border border-white/10 hover:bg-white/10 hover:text-emerald-300 transition-colors">
+                <span key={idx} className="text-xs  text-gray-300 bg-white/5 px-2 py-1.5 rounded-md border border-white/10 hover:bg-white/10 hover:text-emerald-300 transition-colors">
                   {tech}
                 </span>
               ))}

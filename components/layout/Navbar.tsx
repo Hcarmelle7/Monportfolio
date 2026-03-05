@@ -23,7 +23,7 @@ export default function Navbar() {
     { name: 'Accueil', href: '#' },
     { name: 'Profile', href: '#about' },
     { name: 'Compétences', href: '#skills' },
-    { name: 'Projets', href: '#projects' },
+    { name: 'Mes Réalisations', href: '#projects' },
     { name: 'Formation', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ];

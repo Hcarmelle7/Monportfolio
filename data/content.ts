@@ -1,3 +1,22 @@
+import {
+    SiReact, SiNextdotjs, SiNodedotjs, SiJavascript,
+    SiPhp, SiLaravel, SiSymfony, SiFlutter,
+    SiPython, SiCplusplus, SiGit, SiTailwindcss,
+    SiBootstrap, SiC, SiArduino,
+    SiRaspberrypi,
+    SiLinux,
+    SiArm
+} from "react-icons/si";
+import {
+    FaJava,
+    FaMicrochip,
+    FaRobot,
+    FaWaveSquare,
+    FaChartLine,
+    FaProjectDiagram
+} from "react-icons/fa";
+
+
 //fichier de données pour le portfolio, contenant mes informations personnelles, mes compétences et mes projets
 export const AboutMe = {
     name: "Carmelle Helle",
@@ -12,20 +31,63 @@ export const AboutMe = {
 };
 
 export const about = {
-  title: "À propos de moi",
-  description: [
-    "Hello ! Je m'appelle Gertrude Carmelle Rose Helle, étudiante ingénieure passionnée par la technologie de A à Z. Mon ambition ? Fonder un jour ma propre marque Tech d'envergure mondiale.",
-    "Pour bâtir des bases solides, j'ai d'abord exploré le \"matériel\" via un DUT et une Licence en Génie Électrique (GEII) afin de maîtriser le cœur physique des machines.",
-    "Puis, la curiosité l'a emporté ! Pour comprendre ce qui se passe de l'autre côté de l'écran, j'ai consacré une année intensive à me former en développement Web et Mobile. Mon but : maîtriser le code pour concrétiser mes propres idées.",
-    "Aujourd'hui, j'ai fait le grand saut en intégrant le cycle ingénieur de l'ESIEA en France pour repousser mes limites. Désormais capable de lier un matériel de qualité à une architecture logicielle moderne, j'avance chaque jour avec des idées plein la tête !"
-  ],
-  quickFacts: [
-    { label: "L'objectif", value: "Fonder ma marque Tech" },
-    { label: "Background", value: "Électronique & GEII" },
-    { label: "Le switch", value: "Dev Full Stack & Mobile" },
-    { label: "Aujourd'hui", value: "Ingénierie ESIEA (France)" }
-  ]
+    title: "À propos de moi",
+    description: [
+        "Hello ! Je m'appelle Gertrude Carmelle Rose Helle, étudiante ingénieure passionnée par la technologie de A à Z. Mon ambition ? Fonder un jour ma propre marque Tech d'envergure mondiale.",
+        "Pour bâtir des bases solides, j'ai d'abord exploré le \"matériel\" via un DUT et une Licence en Génie Électrique (GEII) afin de maîtriser le cœur physique des machines.",
+        "Puis, la curiosité l'a emporté ! Pour comprendre ce qui se passe de l'autre côté de l'écran, j'ai consacré une année intensive à me former en développement Web et Mobile. Mon but : maîtriser le code pour concrétiser mes propres idées.",
+        "Aujourd'hui, j'ai fait le grand saut en intégrant le cycle ingénieur de l'ESIEA en France pour repousser mes limites. Désormais capable de lier un matériel de qualité à une architecture logicielle moderne, j'avance chaque jour avec des idées plein la tête !"
+    ],
+    quickFacts: [
+        { label: "L'objectif", value: "Fonder ma marque Tech" },
+        { label: "Background", value: "Électronique & GEII" },
+        { label: "Le switch", value: "Dev Full Stack & Mobile" },
+        { label: "Aujourd'hui", value: "Ingénierie ESIEA (France)" }
+    ]
 };
+
+
+
+// Ta liste de compétences avec leurs couleurs officielles !
+export const stacks = [
+    { name: "React.js", icon: SiReact, color: "text-[#61DAFB]" },
+    { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+    { name: "Flutter", icon: SiFlutter, color: "text-[#02569B]" },
+    { name: "Node.js", icon: SiNodedotjs, color: "text-[#339933]" },
+    { name: "JavaScript", icon: SiJavascript, color: "text-[#F7DF1E]" },
+    { name: "PHP", icon: SiPhp, color: "text-[#777BB4]" },
+    { name: "Laravel", icon: SiLaravel, color: "text-[#FF2D20]" },
+    { name: "Symfony", icon: SiSymfony, color: "text-white" },
+    { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
+    { name: "C", icon: SiC, color: "text-[#00599C]" },
+    { name: "Java", icon: FaJava, color: "text-[#f89820]" },
+    { name: "C++", icon: SiCplusplus, color: "text-[#00599C]" },
+    { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06B6D4]" },
+    { name: "Bootstrap CSS", icon: SiBootstrap, color: "text-[#06B6D4]" },
+    { name: "Git", icon: SiGit, color: "text-[#F05032]" },
+];
+
+export const engineeringStacks = [
+  // --- LANGAGES BAS NIVEAU & SCRIPTS ---
+  { name: "C", icon: SiC, color: "text-[#A8B9CC]" },
+  { name: "C++", icon: SiCplusplus, color: "text-[#00599C]" },
+  { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
+  
+  // --- MATÉRIEL & MICROCONTRÔLEURS ---
+  { name: "Arduino", icon: SiArduino, color: "text-[#00979D]" },
+  { name: "Microcontrôleurs", icon: FaMicrochip, color: "text-[#10B981]" }, // Icône de puce électronique
+  { name: "Raspberry Pi", icon: SiRaspberrypi, color: "text-[#C51A4A]" },
+  { name: "Architecture ARM", icon: SiArm, color: "text-[#0091BD]" },
+  
+  // --- SYSTÈMES & LOGICIELS D'INGÉNIERIE ---
+  { name: "Linux Embarqué", icon: SiLinux, color: "text-[#FCC624]" },
+  { name: "MATLAB", icon: FaChartLine, color: "text-[#D97736]" }, // Représente l'analyse de données/calculs
+  { name: "LabVIEW", icon: FaProjectDiagram, color: "text-[#FFD100]" }, // Représente la programmation graphique par blocs
+  
+  // --- DOMAINES D'APPLICATION ---
+  { name: "Mécatronique", icon: FaRobot, color: "text-[#6366F1]" }, // Icône de robotique
+  { name: "Signaux & Systèmes", icon: FaWaveSquare, color: "text-[#EC4899]" } // Représente un oscilloscope/signal
+];
 
 //liste de mes certifications et spécialisations dans le développement web, avec des titres, des durées, des compétences associées, des icônes et des couleurs pour chaque certification
 export const webCertifications = {
