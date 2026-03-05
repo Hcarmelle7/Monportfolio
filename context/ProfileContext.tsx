@@ -5,16 +5,16 @@ import { createContext, useContext, useState, ReactNode } from "react";
 type ProfileType = "developer" | "embedded";
 
 interface ProfileContextType {
-  profile: ProfileType;
-  setProfile: (profile: ProfileType) => void;
+  activeProfile: ProfileType;
+  setActiveProfile: (profile: ProfileType) => void;
 }
 
 const ProfileContext = createContext<ProfileContextType | undefined>(undefined);
 
 export function ProfileProvider({ children }: { children: ReactNode }) {
-  const [profile, setProfile] = useState<ProfileType>("developer");
+  const [activeProfile, setActiveProfile] = useState<ProfileType>("developer");
   return (
-    <ProfileContext.Provider value={{ profile, setProfile }}>
+    <ProfileContext.Provider value={{ activeProfile, setActiveProfile }}>
       {children}
     </ProfileContext.Provider>
   );

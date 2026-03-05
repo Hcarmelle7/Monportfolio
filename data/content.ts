@@ -5,7 +5,8 @@ import {
     SiBootstrap, SiC, SiArduino,
     SiRaspberrypi,
     SiLinux,
-    SiArm
+    SiArm,
+    SiSqlite
 } from "react-icons/si";
 import {
     FaJava,
@@ -61,10 +62,10 @@ export const stacks = [
     { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
     { name: "C", icon: SiC, color: "text-[#00599C]" },
     { name: "Java", icon: FaJava, color: "text-[#f89820]" },
-    { name: "C++", icon: SiCplusplus, color: "text-[#00599C]" },
     { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06B6D4]" },
     { name: "Bootstrap CSS", icon: SiBootstrap, color: "text-[#06B6D4]" },
     { name: "Git", icon: SiGit, color: "text-[#F05032]" },
+    { name: "SQL", icon: SiSqlite, color: "text-[#00599C]" },
 ];
 
 export const engineeringStacks = [
