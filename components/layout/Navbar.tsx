@@ -8,7 +8,7 @@ import { useProfile } from "@/context/ProfileContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const { profile, setProfile } = useProfile();
+  const { activeProfile, setActiveProfile } = useProfile();
 
   // le useEffect détecte le scroll pour changer la navbar
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function Navbar() {
         </a>
 
         {/* Liens de navigation */}
-        <ul className="hidden md:flex gap-8">
+        <ul className="hidden lg:flex gap-8">
           {links.map((link) => (
             <li key={link.name}>
               <a
@@ -62,11 +62,11 @@ export default function Navbar() {
 
           {/* Option Développeur */}
           <button
-            onClick={() => setProfile("developer")}
-            className={`relative z-10 flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 ${profile === "developer" ? "text-white" : "text-gray-400 hover:text-white"
+            onClick={() => setActiveProfile("developer")}
+            className={`relative z-10 flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 ${activeProfile === "developer" ? "text-white" : "text-gray-400 hover:text-white"
               }`}
           >
-            {profile === "developer" && (
+            {activeProfile === "developer" && (
               <motion.div
                 layoutId="nav-switch-pill" // La magie Framer Motion
                 className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full -z-10 shadow-[0_0_15px_rgba(168,85,247,0.4)]"
@@ -79,11 +79,11 @@ export default function Navbar() {
 
           {/* Option Ingénierie */}
           <button
-            onClick={() => setProfile("embedded")}
-            className={`relative z-10 flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 ${profile === "embedded" ? "text-white" : "text-gray-400 hover:text-white"
+            onClick={() => setActiveProfile("embedded")}
+            className={`relative z-10 flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 ${activeProfile === "embedded" ? "text-white" : "text-gray-400 hover:text-white"
               }`}
           >
-            {profile === "embedded" && (
+            {activeProfile === "embedded" && (
               <motion.div
                 layoutId="nav-switch-pill"
                 className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-emerald-600 rounded-full -z-10 shadow-[0_0_15px_rgba(6,182,212,0.4)]"
