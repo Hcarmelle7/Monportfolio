@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import { embeddedSkills } from "@/data/content";
+import { embeddedSkills, engineeringStacks } from "@/data/content";
 import { Cpu, TerminalSquare, Activity, MonitorOff } from "lucide-react";
+import { EmbStack } from "./Stack";
 
 export default function EmbeddedSkills() {
   const iconMap = {
@@ -17,7 +18,7 @@ export default function EmbeddedSkills() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mb-16 text-center lg:text-left"
+        className="mb-8 text-center lg:text-left"
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
           {embeddedSkills.title}
@@ -51,6 +52,8 @@ export default function EmbeddedSkills() {
           </motion.div>
         ))}
       </div>
+
+      <EmbStack />
     </section>
   );
 }

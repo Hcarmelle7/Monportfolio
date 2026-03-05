@@ -25,7 +25,7 @@ export default function About() {
   const borderRadius = useTransform(progress, [0, 400], ["999px", "16px"]);
 
     return (
-        <section id="about" className="py-24 px-4 relative max-w-6xl mx-auto z-10">
+        <section id="about" className="py-25 px-4 relative max-w-6xl mx-auto z-10">
             <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-start">
 
                 <div className="w-full md:w-1/3 md:sticky md:top-32 z-20 flex justify-center md:block">

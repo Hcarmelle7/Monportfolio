@@ -51,8 +51,8 @@ export default function Projects() {
                                 </div>
 
                                 <div className='flex items-start md:flex-col justify-center  gap-6  md:items-center md:text-center  '>
-                                    <div className="p-3 bg-purple-500/10 rounded-lg border border-purple-500/20 text-purple-400">
-                                        <img src={item.image} alt={item.title} className="object-cover w-30 h-15  md:h-20"/>
+                                    <div className="md:p-3 p-2 bg-purple-500/10 rounded-lg border border-purple-500/20 text-purple-400">
+                                        <img src={item.image} alt={item.title} className="object-cover md:w-30 md:h-15  h-10 w-45"/>
                                     </div>
                                     <div>
                                         {/* Contenu de la carte */}

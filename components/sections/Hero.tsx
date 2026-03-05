@@ -5,7 +5,7 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 relative  gap-4">
+    <section className="min-h-[85vh] flex flex-col justify-center items-center text-center pt-25 px-4 relative  gap-4">
 
       {/* --- NOUVELLE ANIMATION PHOTO DE PROFIL --- */}
       <motion.div
