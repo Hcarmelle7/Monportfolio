@@ -1,6 +1,6 @@
 import EmbeddedSkills from "@/components/sections/EmbeddedSkills";
 import HardwareProjects from "@/components/sections/HardwareProjects";
-import EmbeddedEducation from "@/components/sections/EmbeddedEducation.tsx";
+import EmbeddedEducation from "@/components/sections/EmbeddedEducation";
 
 export default function EmbeddedProfile() {
   return (

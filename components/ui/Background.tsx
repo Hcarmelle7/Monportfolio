@@ -53,7 +53,6 @@ export default function Background() {
             left: `${sq.initialX}%`,
           }}
           animate={{
-            // Animation complexe sur plusieurs points clés
             // Le carré va bouger vers ces positions relatives (en pourcentage de l'écran)
             x: [
               `0vw`, 

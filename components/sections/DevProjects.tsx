@@ -65,7 +65,7 @@ export default function Projects() {
                                     </div>
                                 </div>
 
-                                {/* Footer de la carte (Tags) */}
+                                {/* Footer de la carte */}
                                 <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
                                     {item.tech.map((t) => (
                                         <span

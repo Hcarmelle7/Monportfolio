@@ -91,7 +91,7 @@ export default function Navbar() {
               />
             )}
             <Cpu className="w-4 h-4" />
-            <span className="hidden sm:inline">Ingénierie</span>
+            <span className="hidden sm:inline">Électronique & Embarqué</span>
           </button>
 
         </div>

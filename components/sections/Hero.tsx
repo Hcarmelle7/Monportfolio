@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="min-h-[85vh] flex flex-col justify-center items-center text-center pt-25 px-4 relative  gap-4">
 
-      {/* --- NOUVELLE ANIMATION PHOTO DE PROFIL --- */}
+      {/*  ANIMATION PHOTO DE PROFIL */}
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -28,19 +28,19 @@ export default function Hero() {
             duration: 10, // Durée totale de l'animation
             ease: "easeInOut", // Douceur de l'animation
             repeat: Infinity, // Répéter indéfiniment
-            repeatType: "reverse" // Revenir en arrière pour une boucle fluide
+            repeatType: "reverse" // Revenir en arrière
           }}
           className="absolute inset-0 bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-600 blur-2xl opacity-60"
         />
 
-        {/* 2. Un deuxième cercle plus fin qui tourne en sens inverse pour la complexité */}
+        {/* 2. le deuxième cercle  qui tourne en sens inverse */}
         <motion.div
           animate={{ rotate: [360, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute inset-2 rounded-full border border-white/20 border-t-purple-500/80 border-r-pink-500/80 blur-[1px]"
         />
 
-        {/* 3. Le conteneur de la photo doit etre devant */}
+        {/* 3. Le conteneur de la photo devant */}
         <div className="relative z-10 w-30 h-30 rounded-full overflow-hidden border-2 border-white/20 shadow-[0_0_40px_rgba(139,92,246,0.3)] backdrop-blur-sm bg-black/30 p-1">
           <div className="w-full h-full rounded-full overflow-hidden relative">
             <img
@@ -65,7 +65,6 @@ export default function Hero() {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3 }}
-        // J'ai ajouté "leading-relaxed" pour aérer l'espace entre les lignes quand ça se superpose
         className="text-xl md:text-2xl w-full text-purple-400 font-medium mb-4 leading-relaxed"
       >
         <span className="inline-block break-words bg-purple-500/10 px-5 py-2.5 rounded-2xl border border-purple-500/20">
@@ -88,7 +87,7 @@ export default function Hero() {
         transition={{ delay: 0.5 }}
         className="flex flex-col md:flex-row gap-6 items-center"
       >
-        {/* Bouton d'appel à l'action pour voir les projets */}
+        {/* Bouton  pour voir les projets */}
         <a href="#projects" className="px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-full font-medium transition-all flex items-center gap-2 group shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5">
           Voir mes projets
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -101,6 +100,11 @@ export default function Hero() {
           <div className="w-px h-4 bg-white/10"></div>
           <a href={AboutMe.socials.email} className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"><Mail size={20} /></a>
         </div>
+
+        <a href="#projects" className="px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-full font-medium transition-all flex items-center gap-2 group shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5">
+          Voir mon CV
+          {/* <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /> */}
+        </a>
       </motion.div>
       
     </section>
