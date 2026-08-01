@@ -28,10 +28,8 @@ export default function RootLayout({
         
        <ProfileProvider>
           
-          {/* La Navbar a maintenant accès au contexte ! */}
           <Navbar />
-          
-          {/* Les pages en dessous ont aussi accès au contexte ! */}
+
           <main>
             {children}
           </main>

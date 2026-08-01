@@ -21,8 +21,8 @@ import {
 //fichier de données pour le portfolio, contenant mes informations personnelles, mes compétences et mes projets
 export const AboutMe = {
     name: "Carmelle Helle",
-    role: "Ingénieur Informatique & Développeur Full Stack",
-    bio: "Passionné par l'architecture logicielle et le développement web moderne. Je transforme des idées complexes en expériences utilisateur fluides avec React, Symfony et Flutter.",
+    role: "Ingénieure Systèmes Embarqués & Développeuse Full Stack",
+    bio: "Passionnée par l'architecture logicielle et le développement web moderne. Je transforme des idées complexes en expériences utilisateur fluides avec React, Symfony et Flutter.",
     image: "/images/profile.png",
     socials: {
         github: "https://github.com/Hcarmelle7",
@@ -49,8 +49,8 @@ export const about = {
 
 
 
-// Ta liste de compétences avec leurs couleurs officielles !
-export const stacks = [
+// Ma liste de compétences!
+export const webStacks = [
     { name: "React.js", icon: SiReact, color: "text-[#61DAFB]" },
     { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
     { name: "Flutter", icon: SiFlutter, color: "text-[#02569B]" },
@@ -69,25 +69,18 @@ export const stacks = [
 ];
 
 export const engineeringStacks = [
-  // --- LANGAGES BAS NIVEAU & SCRIPTS ---
-  { name: "C", icon: SiC, color: "text-[#A8B9CC]" },
-  { name: "C++", icon: SiCplusplus, color: "text-[#00599C]" },
-  { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
-  
-  // --- MATÉRIEL & MICROCONTRÔLEURS ---
-  { name: "Arduino", icon: SiArduino, color: "text-[#00979D]" },
-  { name: "Microcontrôleurs", icon: FaMicrochip, color: "text-[#10B981]" }, // Icône de puce électronique
-  { name: "Raspberry Pi", icon: SiRaspberrypi, color: "text-[#C51A4A]" },
-  { name: "Architecture ARM", icon: SiArm, color: "text-[#0091BD]" },
-  
-  // --- SYSTÈMES & LOGICIELS D'INGÉNIERIE ---
-  { name: "Linux Embarqué", icon: SiLinux, color: "text-[#FCC624]" },
-  { name: "MATLAB", icon: FaChartLine, color: "text-[#D97736]" }, // Représente l'analyse de données/calculs
-  { name: "LabVIEW", icon: FaProjectDiagram, color: "text-[#FFD100]" }, // Représente la programmation graphique par blocs
-  
-  // --- DOMAINES D'APPLICATION ---
-  { name: "Mécatronique", icon: FaRobot, color: "text-[#6366F1]" }, // Icône de robotique
-  { name: "Signaux & Systèmes", icon: FaWaveSquare, color: "text-[#EC4899]" } // Représente un oscilloscope/signal
+    { name: "C", icon: SiC, color: "text-[#A8B9CC]" },
+    { name: "C++", icon: SiCplusplus, color: "text-[#00599C]" },
+    { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
+    { name: "Arduino", icon: SiArduino, color: "text-[#00979D]" },
+    { name: "Microcontrôleurs", icon: FaMicrochip, color: "text-[#10B981]" },
+    { name: "Raspberry Pi", icon: SiRaspberrypi, color: "text-[#C51A4A]" },
+    { name: "Architecture ARM", icon: SiArm, color: "text-[#0091BD]" },
+    { name: "Linux Embarqué", icon: SiLinux, color: "text-[#FCC624]" },
+    { name: "MATLAB", icon: FaChartLine, color: "text-[#D97736]" },
+    { name: "LabVIEW", icon: FaProjectDiagram, color: "text-[#FFD100]" },
+    { name: "Mécatronique", icon: FaRobot, color: "text-[#6366F1]" },
+    { name: "Signaux & Systèmes", icon: FaWaveSquare, color: "text-[#EC4899]" }
 ];
 
 //liste de mes certifications et spécialisations dans le développement web, avec des titres, des durées, des compétences associées, des icônes et des couleurs pour chaque certification
@@ -208,6 +201,27 @@ export const hardwareProjects = {
     subtitle: "Conception de systèmes autonomes et interfaçage matériel",
     projects: [
         {
+            title: "Smart Energy Guardian",
+            context: "Système Embarqué & Domotique",
+            description: "Système domotique intelligent conçu pour monitorer la consommation électrique en temps réel et prévenir les surcharges du réseau via un système matériel et logiciel de délestage (Interlock).",
+            objectives: [
+                "Développement Bare-Metal 100% API Low-Layer (LL) sans overhead HAL.",
+                "Architecture non-bloquante avec machine d'états asynchrone.",
+                "Implémentation d'un Interlock matériel de sécurité (délestage).",
+                "Filtrage logiciel des signaux ADC (tolérance/hystérésis)."
+            ],
+            techStack: [
+                "C Bare-Metal",
+                "STM32L053R8",
+                "LL API",
+                "I2C",
+                "PWM",
+                "Timers & ISR"
+            ],
+            icon: "Plane",
+            demoLink: "/demo"
+        },
+        {
             title: "Drone de détection de nids-de-poule",
             context: "Projet de fin de DUT GEII",
             description: "Conception et programmation d'un drone capable de détecter et mesurer les nids-de-poule sur les routes pour faciliter la maintenance des infrastructures.",
@@ -241,10 +255,10 @@ export const embeddedEducation = {
         {
             period: "Depuis 2025",
             degree: "Cycle Ingénieur (Bac+5)",
-            school: "ESIEA (Campus Ivry)",
+            school: "ESIEA (Campus d'Ivry-sur-Seine, France)",
             description: "Spécialisation prévue en systèmes embarqués et autonomes. Tronc commun en architecture des systèmes et génie logiciel.",
             icon: "Cpu",
-            color: "from-purple-500 to-pink-500" // Thème logiciel/hybride
+            color: "from-purple-500 to-pink-500" 
         },
         {
             period: "2022 - 2023",

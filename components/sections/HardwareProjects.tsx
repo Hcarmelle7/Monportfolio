@@ -68,6 +68,18 @@ export default function HardwareProjects() {
                 </span>
               ))}
             </div>
+            <div>
+              {project.demoLink && (
+                <div className="mt-6 pt-4 border-t border-white/5">
+                  <a
+                    href={project.demoLink}
+                    className="inline-flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
+                  >
+                    Lancer la simulation interactive →
+                  </a>
+                </div>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>

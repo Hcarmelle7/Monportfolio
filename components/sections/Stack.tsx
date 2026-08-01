@@ -1,4 +1,4 @@
-import { engineeringStacks, stacks } from "@/data/content";
+import { engineeringStacks, webStacks } from "@/data/content";
 import { motion } from "framer-motion";
 
 export default function DevStack() {
@@ -29,7 +29,7 @@ export default function DevStack() {
           }}
         >
           
-          {[...stacks, ...stacks].map((stack, index) => (
+          {[...webStacks, ...webStacks].map((stack, index) => (
             <div 
               key={index} 
               className="flex flex-col items-center justify-center gap-4 min-w-[100px]"
