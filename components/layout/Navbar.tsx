@@ -20,12 +20,12 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { name: 'Accueil', href: '#' },
-    { name: 'Profile', href: '#about' },
-    { name: 'Compétences', href: '#skills' },
-    { name: 'Mes Réalisations', href: '#projects' },
-    { name: 'Formation', href: '#education' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Accueil', href: '/#' },
+    { name: 'Profile', href: '/#about' },
+    { name: 'Compétences', href: '/#skills' },
+    { name: 'Mes Réalisations', href: '/#projects' },
+    { name: 'Formation', href: '/#education' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -39,7 +39,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+        <a href="/#" className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
           Carmelle<span className="text-white">.dev</span>
         </a>
 

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react"; // Ajout de useEffect et Suspense
+import { useSearchParams } from "next/navigation"; // Ajout pour lire l'URL
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Cpu } from "lucide-react";
 
@@ -22,20 +23,40 @@ import EmbeddedProfile from "./embedded/page";
 import About from "@/components/sections/About";
 import { useProfile } from "@/context/ProfileContext";
 
+// --- NOUVEAU COMPOSANT : Gestionnaire d'URL ---
+function ProfileFromUrl() {
+  const searchParams = useSearchParams();
+  const tab = searchParams.get("tab");
+  const { setActiveProfile } = useProfile();
+ 
+
+  useEffect(() => {
+    // Si l'URL contient ?tab=embedded ou ?tab=developer, on met à jour le contexte global
+    if (tab === "embedded" || tab === "developer") {
+      setActiveProfile(tab);
+    }
+  }, [tab, setActiveProfile]);
+
+  return null; // Ce composant n'affiche rien visuellement
+}
 
 export default function Home() {
-  const {activeProfile, setActiveProfile} = useProfile();
+  const { activeProfile } = useProfile();
 
   return (
     <div className="flex flex-col gap-20 md:gap-12 pb-8">
+      
+      {/* On place le gestionnaire d'URL ici, enveloppé de Suspense (Requis par Next.js) */}
+      <Suspense fallback={null}>
+        <ProfileFromUrl />
+      </Suspense>
 
       <div className="min-h-[80vh] flex flex-col items-center justify-center gap-2 px-4 ">
-
         <Hero />
-
-        
       </div>
+      
       <About />
+      
       {/* Le Contenu principal change selon le profil sélectionné */}
       <div className="min-h-screen">
         <AnimatePresence mode="wait">
@@ -64,7 +85,6 @@ export default function Home() {
               <EmbeddedProfile />
             </motion.div>
           )}
-
         </AnimatePresence>
       </div>
 
