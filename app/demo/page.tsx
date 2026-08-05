@@ -1,11 +1,9 @@
-// page.tsx (ou SimulateurPage.tsx)
+
 "use client";
 
 import Link from "next/link";
 import { ArrowLeft, Cpu, Zap, Activity } from "lucide-react";
 import { motion } from "framer-motion";
-
-// Assure-toi que le chemin d'import est correct selon ton arborescence
 import SmartEnergySimulator from "../../components/shared/smart-energy-guardian-demo";
 
 export default function SimulateurPage() {
@@ -13,13 +11,7 @@ export default function SimulateurPage() {
     <div className="min-h-screen bg-[#0a0a0a] text-white relative flex items-center justify-center py-20 px-4 overflow-hidden">
 
       {/* Bouton de retour*/}
-      {/* <Link 
-        href="/" 
-        className="absolute top-6 left-6 md:top-10 md:left-10 text-gray-400 hover:text-white transition-colors flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:bg-white/10"
-      >
-        <ArrowLeft size={16} />
-        <span className="text-sm font-medium">Retour au Portfolio</span>
-      </Link> */}
+
 
       {/* Conteneur principal  */}
       <div className="max-w-6xl w-full mx-auto">
@@ -28,6 +20,13 @@ export default function SimulateurPage() {
             <Cpu className="w-4 h-4" />
             <span>Système Embarqué Interactif</span>
           </div> */}
+          <Link
+            href="/?tab=embedded#projects"
+            className=" text-gray-400 hover:text-white transition-colors flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:bg-white/10"
+          >
+            <ArrowLeft size={16} />
+            <span className="text-sm font-medium">Retour au Portfolio</span>
+          </Link>
           <h1 className="text-3xl md:text-4xl text-center font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-500 leading-tight">
             Smart Energy Guardian
           </h1>
