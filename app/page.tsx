@@ -31,13 +31,12 @@ function ProfileFromUrl() {
  
 
   useEffect(() => {
-    // Si l'URL contient ?tab=embedded ou ?tab=developer, on met à jour le contexte global
     if (tab === "embedded" || tab === "developer") {
       setActiveProfile(tab);
     }
   }, [tab, setActiveProfile]);
 
-  return null; // Ce composant n'affiche rien visuellement
+  return null; 
 }
 
 export default function Home() {
@@ -46,7 +45,6 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-20 md:gap-12 pb-8">
       
-      {/* On place le gestionnaire d'URL ici, enveloppé de Suspense (Requis par Next.js) */}
       <Suspense fallback={null}>
         <ProfileFromUrl />
       </Suspense>

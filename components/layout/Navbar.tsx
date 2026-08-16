@@ -3,10 +3,18 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { AboutMe } from '@/data/content';
-import { Code2, Cpu, Github, Linkedin, Mail, } from 'lucide-react';
+import { ArrowLeft, Code2, Cpu, Github, Linkedin, Mail, } from 'lucide-react';
 import { useProfile } from "@/context/ProfileContext";
+// 1. On importe le hook pour lire l'URL
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Navbar() {
+  // 2. On récupère le chemin actuel
+  const pathname = usePathname();
+  // ⚠️ Modifie "/simulateur" si le nom du dossier de ta page est différent
+  const isSimulationPage = pathname === "/demo";
+
   const [scrolled, setScrolled] = useState(false);
   const { activeProfile, setActiveProfile } = useProfile();
 
@@ -28,12 +36,44 @@ export default function Navbar() {
     { name: 'Contact', href: '/#contact' },
   ];
 
+  // 3. LA CONDITION POUR LA PAGE SIMULATEUR
+  // Si on est sur la page de simulation, on ne retourne que le logo isolé
+  if (isSimulationPage) {
+    return (
+      <header className="absolute top-0 left-0 w-full px-6 py-4 z-50 flex items-center justify-between bg-black/20 backdrop-blur-sm border-b border-white/10">
+        
+        {/* GAUCHE : Logo */}
+        <a href="/" className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 hover:opacity-80 transition-opacity">
+          Carmelle<span className="text-white">.dev</span>
+        </a>
+
+        {/* CENTRE : Titre du projet (Masqué sur tout petit écran pour éviter que ça se chevauche) */}
+        <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <h1 className="text-2xl md:text-3xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-500">
+            Smart Energy Guardian
+          </h1>
+        </div>
+
+        {/* DROITE : Bouton Retour */}
+        <Link 
+          href="/?tab=embedded#projects"
+          className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-sm font-medium text-gray-300 hover:text-white transition-all"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Retour
+        </Link>
+        
+      </header>
+    );
+  }
+
+  // 4. LE RESTE DU TEMPS : TA NAVBAR NORMALE INTACTE
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-6",
         scrolled ? "bg-black/50 backdrop-blur-md border-b border-white/10" : "bg-transparent"
       )}
     >
@@ -49,7 +89,7 @@ export default function Navbar() {
             <li key={link.name}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-gray-300 hover:text-white hover:text-primary transition-colors relative group"
+                className="text-xl font-medium text-gray-300 hover:text-white hover:text-primary transition-colors relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full" />
@@ -58,12 +98,12 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="relative flex items-center p-1 bg-white/5 border border-white/10 rounded-full shadow-lg">
+        <div className="relative flex items-center bg-white/5 border border-white/10 rounded-full shadow-lg">
 
           {/* Option Développeur */}
           <button
             onClick={() => setActiveProfile("developer")}
-            className={`relative z-10 flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 ${activeProfile === "developer" ? "text-white" : "text-gray-400 hover:text-white"
+            className={`relative z-10 flex items-center gap-1 px-2 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 ${activeProfile === "developer" ? "text-white" : "text-gray-400 hover:text-white"
               }`}
           >
             {activeProfile === "developer" && (
@@ -80,7 +120,7 @@ export default function Navbar() {
           {/* Option Ingénierie */}
           <button
             onClick={() => setActiveProfile("embedded")}
-            className={`relative z-10 flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 ${activeProfile === "embedded" ? "text-white" : "text-gray-400 hover:text-white"
+            className={`relative z-10 flex items-center gap-1 px-2 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 ${activeProfile === "embedded" ? "text-white" : "text-gray-400 hover:text-white"
               }`}
           >
             {activeProfile === "embedded" && (
@@ -91,7 +131,7 @@ export default function Navbar() {
               />
             )}
             <Cpu className="w-4 h-4" />
-            <span className="hidden sm:inline">Électronique & Embarqué</span>
+            <span className="hidden sm:inline">Embarqué</span>
           </button>
 
         </div>
