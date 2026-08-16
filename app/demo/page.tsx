@@ -15,11 +15,13 @@ export default function SimulateurPage() {
 
       {/* Conteneur principal  */}
       <div className="max-w-6xl w-full mx-auto">
-        <div className="flex flex-col items-center mb-8">
-          {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+
+
+        {/* <div className="flex gap-4 items-center mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
             <Cpu className="w-4 h-4" />
             <span>Système Embarqué Interactif</span>
-          </div> */}
+          </div>
           <Link
             href="/?tab=embedded#projects"
             className=" text-gray-400 hover:text-white transition-colors flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:bg-white/10"
@@ -30,35 +32,36 @@ export default function SimulateurPage() {
           <h1 className="text-3xl md:text-4xl text-center font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-500 leading-tight">
             Smart Energy Guardian
           </h1>
+        </div> */}
+        <div>
+          {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+                <Cpu className="w-4 h-4" />
+                <span>Système Embarqué Interactif</span>
+              </div> */}
+
+
+          <p className="text-gray-400 text-lg">
+            Ce simulateur illustre la logique de délestage d'un microcontrôleur.
+            Testez le système en temps réel en définissant un budget et en faisant varier la charge électrique.
+          </p>
         </div>
 
 
 
-        <div className="flex flex-col lg:flex-row items-center gap-2">
+        <div className="flex flex-col lg:flex-row items-center ">
 
           {/* COLONNE GAUCHE : LES EXPLICATIONS  */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="w-full lg:w-1/2 space-y-5"
+            className="flex-4 w-full lg:w-1/2 space-y-5 lg:mt-[30px]"
           >
 
-            <div>
-              {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
-                <Cpu className="w-4 h-4" />
-                <span>Système Embarqué Interactif</span>
-              </div> */}
 
-
-              <p className="text-gray-400 text-lg">
-                Ce simulateur illustre la logique de délestage d'un microcontrôleur.
-                Testez le système en temps réel en définissant un budget et en faisant varier la charge électrique.
-              </p>
-            </div>
 
             {/* Guide d'utilisation */}
-            <div className="space-y-4 bg-white/5 border border-white/10 p-6 rounded-2xl">
+            <div className="space-y-1 bg-white/5 border border-white/10 p-4 rounded-2xl">
               <h3 className="text-xl font-semibold text-white">Comment l'utiliser ?</h3>
 
               <ul className="space-y-5">
@@ -100,7 +103,7 @@ export default function SimulateurPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full lg:w-1/2 flex justify-center"
+            className="flex-8 w-full lg:w-1/2 flex justify-center"
           >
             <div className="relative">
               <div className="absolute inset-0 bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none" />
