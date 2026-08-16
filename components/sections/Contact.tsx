@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, User, Mail, MessageSquare, MapPin, Linkedin, Github, FileText } from "lucide-react";
+import { cvFiles } from "@/lib/cv";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -11,7 +12,6 @@ export default function Contact() {
   const [error, setError] = useState(false);
 
   const links = [
-    
     {
       icon: <Linkedin className="w-6 h-6" />,
       label: "LinkedIn",
@@ -30,7 +30,7 @@ export default function Contact() {
       icon: <FileText className="w-6 h-6" />,
       label: "CV",
       value: "Télécharger mon CV",
-      href: "/carmelle-helle-cv.pdf",
+      href: cvFiles.developer,
       color: "from-purple-600 to-purple-800"
     }
   ];
@@ -39,28 +39,24 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     setError(false);
+    setIsSuccess(false);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY, 
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
 
-      if (result.success) {
+      if (response.ok && result.success) {
         setIsSuccess(true);
-        setFormData({ name: "", email: "", message: "" }); //vider le formulaire
-        setTimeout(() => setIsSuccess(false), 5000); // message de succès pendant 5 secondes
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setIsSuccess(false), 5000);
       } else {
         setError(true);
       }

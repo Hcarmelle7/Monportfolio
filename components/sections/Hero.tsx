@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { AboutMe } from "@/data/content";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
@@ -47,10 +48,13 @@ export default function Hero() {
           {/* 3. Le conteneur de la photo devant */}
           <div className="relative z-10 w-30 h-30 rounded-full overflow-hidden border-2 border-white/20 shadow-[0_0_40px_rgba(139,92,246,0.3)] backdrop-blur-sm bg-black/30 p-1">
             <div className="w-full h-full rounded-full overflow-hidden relative">
-              <img
+              <Image
                 src={AboutMe.image}
                 alt="Profile Placeholder"
-                className="object-cover w-full h-full scale-105 hover:scale-110 transition-transform duration-500"
+                fill
+                priority
+                sizes="120px"
+                className="object-cover scale-105 hover:scale-110 transition-transform duration-500"
               />
             </div>
           </div>

@@ -9,17 +9,9 @@ import { Code2, Cpu } from "lucide-react";
 import Hero from "@/components/sections/Hero";
 import Contact from "@/components/sections/Contact";
 
-// --- IMPORTS DÉVELOPPEUR ---
-import Skills from "@/components/sections/DeveloperSkills";
-import Projects from "@/components/sections/DevProjects";
-import WebCertifications from "@/components/sections/WebCertifications";
-
-// --- IMPORTS EMBARQUÉ ---
-import EmbeddedSkills from "@/components/sections/EmbeddedSkills";
-import HardwareProjects from "@/components/sections/HardwareProjects";
-import EmbeddedEducation from "@/components/sections/EmbeddedEducation";
-import DeveloperProfile from "./developper/page";
-import EmbeddedProfile from "./embedded/page";
+// --- IMPORTS PAR CATÉGORIE ---
+import ProfilDeveloppement from "./dev/page";
+import ProfilEmbarque from "./embarque/page";
 import About from "@/components/sections/About";
 import { useProfile } from "@/context/ProfileContext";
 
@@ -31,6 +23,16 @@ function ProfileFromUrl() {
  
 
   useEffect(() => {
+    if (tab === "dev") {
+      setActiveProfile("developer");
+      return;
+    }
+
+    if (tab === "embarque") {
+      setActiveProfile("embedded");
+      return;
+    }
+
     if (tab === "embedded" || tab === "developer") {
       setActiveProfile(tab);
     }
@@ -67,7 +69,7 @@ export default function Home() {
               transition={{ duration: 0.4 }}
               className="flex flex-col gap-20 md:gap-32"
             >
-              <DeveloperProfile />
+              <ProfilDeveloppement />
             </motion.div>
           )}
 
@@ -80,7 +82,7 @@ export default function Home() {
               transition={{ duration: 0.4 }}
               className="flex flex-col gap-20 md:gap-32"
             >
-              <EmbeddedProfile />
+              <ProfilEmbarque />
             </motion.div>
           )}
         </AnimatePresence>
