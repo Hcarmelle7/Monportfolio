@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { devProjects } from '@/data/content';
 import { motion } from 'framer-motion';
 import { ExternalLink, Code2 } from 'lucide-react';
-import SpotlightCard from '../ui/SpotlighCard';
+import SpotlightCard from '@/components/ui/SpotlighCard';
 
 export default function Projects() {
     return (

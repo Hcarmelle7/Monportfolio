@@ -157,14 +157,6 @@ export const devProjects = {
             link: "#",
             image: "/images/artify.png"
         },
-        {
-            id: 4,
-            title: "Artify - Application web",
-            description: "Developpement front-end et back-end d'une application web de gestion de galerie d'art. Intégration d'une API tierce pour la reconnaissance d'images.",
-            tech: ["React", "Node.js", "Tailwind", "mySQL"],
-            link: "#",
-            image: "/images/Artify.png"
-        },
     ]
 };
 

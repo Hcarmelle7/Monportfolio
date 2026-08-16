@@ -10,8 +10,30 @@ import { ProfileProvider } from "@/context/ProfileContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Carmelle.dev | Développeur Full Stack",
-  description: "Portfolio de développeur web & mobile spécialisé en React, Node.js et Flutter.",
+  title: "Carmelle Helle | Ingénieure Systèmes Embarqués & Développeuse Full Stack",
+  description: "Portfolio de Carmelle Helle, ingénieure systèmes embarqués et développeuse full stack spécialisée en React, Next.js, Node.js et Flutter.",
+  keywords: [
+    "Carmelle Helle",
+    "portfolio",
+    "ingénieure embarquée",
+    "full stack",
+    "React",
+    "Next.js",
+    "Flutter",
+    "embedded",
+    "developpeuse"
+  ],
+  openGraph: {
+    title: "Carmelle Helle | Portfolio",
+    description: "Ingénieure systèmes embarqués et développeuse full stack.",
+    type: "website",
+    locale: "fr_FR"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Carmelle Helle | Portfolio",
+    description: "Ingénieure systèmes embarqués et développeuse full stack."
+  }
 };
 
 export default function RootLayout({

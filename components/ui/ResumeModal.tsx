@@ -4,6 +4,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useProfile } from "@/context/ProfileContext";
+import { cvFiles, cvTitles } from "@/lib/cv";
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -12,9 +13,9 @@ interface ResumeModalProps {
 
 export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const { activeProfile } = useProfile();
-  
-  const cvFile = activeProfile === "embedded" ? "/docs/cv/cv-embarque-helle.pdf" : "/docs/cv/cv-developpeur-helle.pdf";
-  const title = activeProfile === "embedded" ? "CV - Electronique & Embarqué" : "CV - Développeuse Full Stack";
+
+  const cvFile = activeProfile === "embedded" ? cvFiles.embedded : cvFiles.developer;
+  const title = activeProfile === "embedded" ? cvTitles.embedded : cvTitles.developer;
 
   return (
     <AnimatePresence>
