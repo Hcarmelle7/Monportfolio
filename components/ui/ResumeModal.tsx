@@ -37,12 +37,12 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-2xl h-[95vh] bg-[#1a1a1a] rounded-2xl border border-white/10 shadow-2xl overflow-hidden flex flex-col z-10"
+            className="relative w-full max-w-xl h-[95vh] bg-[#1a1a1a] rounded-2xl border border-white/10 shadow-2xl overflow-hidden flex flex-col z-10"
           >
             
             {/* En-tête */}
-            <div className="flex items-center justify-between p-2 border-b border-white/10 bg-[#0a0a0a]">
-              <h3 className="text-white font-medium">{title}</h3>
+            <div className="flex items-center  justify-between px-3 border-b border-white/10 bg-[#0a0a0a]">
+              <h3 className="text-white  font-medium">{title}</h3>
               <button 
                 onClick={onClose}
                 className="p-1 bg-white/5 hover:bg-red-500/20 text-white hover:text-red-400 rounded-full transition-colors"

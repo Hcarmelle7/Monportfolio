@@ -155,7 +155,7 @@ export const devProjects = {
             description: "Developpement front-end et back-end d'une application web de gestion de galerie d'art. Intégration d'une API tierce pour la reconnaissance d'images.",
             tech: ["React", "Node.js", "Tailwind", "mySQL"],
             link: "#",
-            image: "/images/Artify.png"
+            image: "/images/artify.png"
         },
         {
             id: 4,
@@ -203,22 +203,20 @@ export const hardwareProjects = {
         {
             title: "Smart Energy Guardian",
             context: "Système Embarqué & Domotique",
-            description: "Système domotique intelligent conçu pour monitorer la consommation électrique en temps réel et prévenir les surcharges du réseau via un système matériel et logiciel de délestage (Interlock).",
+            description: "Système domotique préventif de délestage électrique sur microcontrôleur, accompagné de sa simulation interactive.",
             objectives: [
-                "Développement Bare-Metal 100% API Low-Layer (LL) sans overhead HAL.",
-                "Architecture non-bloquante avec machine d'états asynchrone.",
-                "Implémentation d'un Interlock matériel de sécurité (délestage).",
-                "Filtrage logiciel des signaux ADC (tolérance/hystérésis)."
+                "Développement Bare-Metal exclusif en API Low-Layer (LL) sans surcouche HAL.",
+                "Architecture non-bloquante (machine d'états asynchrone) et filtrage ADC.",
+                "Implémentation d'un Interlock matériel sécurisant le réseau contre les surcharges."
             ],
             techStack: [
                 "C Bare-Metal",
                 "STM32L053R8",
                 "LL API",
-                "I2C",
-                "PWM",
-                "Timers & ISR"
+                "Timers & ISR",
+                "I2C / PWM"
             ],
-            icon: "Plane",
+            icon: "Cpu",
             demoLink: "/demo"
         },
         {
@@ -231,7 +229,8 @@ export const hardwareProjects = {
                 "Interfaçage des capteurs de distance et caméras"
             ],
             techStack: ["C++", "Microcontrôleurs", "Capteurs IR/Ultrasons", "Électronique embarquée"],
-            icon: "Plane"
+            icon: "Plane",
+            demoLink: "/demo"
         },
         {
             title: "Système de Backup Électrique Portatif",
@@ -243,7 +242,8 @@ export const hardwareProjects = {
                 "Sécurisation du circuit électrique"
             ],
             techStack: ["Électrotechnique", "Électronique de puissance", "Proteus", "CAO"],
-            icon: "BatteryCharging"
+            icon: "BatteryCharging",
+            demoLink: "/demo"
         }
     ]
 };
@@ -258,7 +258,7 @@ export const embeddedEducation = {
             school: "ESIEA (Campus d'Ivry-sur-Seine, France)",
             description: "Spécialisation prévue en systèmes embarqués et autonomes. Tronc commun en architecture des systèmes et génie logiciel.",
             icon: "Cpu",
-            color: "from-purple-500 to-pink-500" 
+            color: "from-purple-500 to-pink-500"
         },
         {
             period: "2022 - 2023",
