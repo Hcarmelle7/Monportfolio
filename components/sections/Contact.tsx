@@ -30,7 +30,7 @@ export default function Contact() {
       icon: <FileText className="w-6 h-6" />,
       label: "CV",
       value: "Télécharger mon CV",
-      href: cvFiles.developer,
+      href: cvFiles.developpeur,
       color: "from-purple-600 to-purple-800"
     }
   ];

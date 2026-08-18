@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { hardwareProjects } from "@/data/content";
+import { projetsEmbarque } from "@/data/content";
 import { Plane, Cpu, BatteryCharging, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function HardwareProjects() {
@@ -17,7 +17,7 @@ export default function HardwareProjects() {
   // --- LOGIQUE DU CARROUSEL ---
   const itemsPerPage = 2;
   // Index maximum possible pour ne pas déborder
-  const maxIndex = Math.max(0, hardwareProjects.projects.length - itemsPerPage);
+  const maxIndex = Math.max(0, projetsEmbarque.projects.length - itemsPerPage);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
@@ -28,10 +28,10 @@ export default function HardwareProjects() {
   };
 
   // On extrait uniquement les 2 projets à afficher
-  const visibleProjects = hardwareProjects.projects.slice(currentIndex, currentIndex + itemsPerPage);
+  const visibleProjects = projetsEmbarque.projects.slice(currentIndex, currentIndex + itemsPerPage);
 
   return (
-    <section className="py-24 px-4 relative max-w-6xl mx-auto z-10" id="hardware-projects">
+    <section className="py-24 px-4 relative max-w-6xl mx-auto z-10" id="projets-embarque">
       
       {/* En-tête */}
       <motion.div
@@ -41,9 +41,9 @@ export default function HardwareProjects() {
         className="mb-8"
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-500">
-          {hardwareProjects.title}
+          {projetsEmbarque.title}
         </h2>
-        <p className="text-gray-400 text-lg">{hardwareProjects.subtitle}</p>
+        <p className="text-gray-400 text-lg">{projetsEmbarque.subtitle}</p>
         <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full mt-6"></div>
       </motion.div>
 
@@ -51,7 +51,7 @@ export default function HardwareProjects() {
       <div className="flex items-center gap-2 md:gap-6">
         
         {/* Flèche Gauche */}
-        {hardwareProjects.projects.length > itemsPerPage && (
+        {projetsEmbarque.projects.length > itemsPerPage && (
           <button
             onClick={prevSlide}
             className="p-3 rounded-full bg-[#0a0a0a] border border-emerald-500/20 hover:bg-white/5 hover:border-emerald-500/50 transition-all text-emerald-400 flex-shrink-0 z-10"
@@ -119,7 +119,7 @@ export default function HardwareProjects() {
         </div>
 
         {/* Flèche Droite */}
-        {hardwareProjects.projects.length > itemsPerPage && (
+        {projetsEmbarque.projects.length > itemsPerPage && (
           <button
             onClick={nextSlide}
             className="p-3 rounded-full bg-[#0a0a0a] border border-emerald-500/20 hover:bg-white/5 hover:border-emerald-500/50 transition-all text-emerald-400 flex-shrink-0 z-10"

@@ -50,7 +50,7 @@ export const about = {
 
 
 // Ma liste de compétences!
-export const webStacks = [
+export const stackWeb = [
     { name: "React.js", icon: SiReact, color: "text-[#61DAFB]" },
     { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
     { name: "Flutter", icon: SiFlutter, color: "text-[#02569B]" },
@@ -67,8 +67,9 @@ export const webStacks = [
     { name: "Git", icon: SiGit, color: "text-[#F05032]" },
     { name: "SQL", icon: SiSqlite, color: "text-[#00599C]" },
 ];
+export const webStacks = stackWeb;
 
-export const engineeringStacks = [
+export const stackEmbarque = [
     { name: "C", icon: SiC, color: "text-[#A8B9CC]" },
     { name: "C++", icon: SiCplusplus, color: "text-[#00599C]" },
     { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
@@ -82,9 +83,10 @@ export const engineeringStacks = [
     { name: "Mécatronique", icon: FaRobot, color: "text-[#6366F1]" },
     { name: "Signaux & Systèmes", icon: FaWaveSquare, color: "text-[#EC4899]" }
 ];
+export const engineeringStacks = stackEmbarque;
 
 //liste de mes certifications et spécialisations dans le développement web, avec des titres, des durées, des compétences associées, des icônes et des couleurs pour chaque certification
-export const webCertifications = {
+export const certificationsDeveloppeur = {
     title: "Certifications & Spécialisations",
     subtitle: "Cursus intensifs d'un an axés sur la maîtrise complète du cycle de développement",
     items: [
@@ -111,9 +113,10 @@ export const webCertifications = {
         }
     ]
 };
+export const webCertifications = certificationsDeveloppeur;
 
 //liste de mes compétences avec sujet, niveau de compétence (A) et niveau maximum (fullMark), pour une utilisation dans un graphique radar
-export const DeveloperSkills = {
+export const competencesDeveloppeur = {
     title: "Développement Web & Mobile",
     subtitle: "Compétences techniques affinées par des projets concrets et une formation rigoureuse",
     subjects: [
@@ -126,9 +129,10 @@ export const DeveloperSkills = {
         { subject: 'UI/UX Design', A: 65, fullMark: 100 },
     ]
 };
+export const DeveloperSkills = competencesDeveloppeur;
 
 //liste de mes projets de développement web et mobile, avec des titres, des descriptions, des technologies utilisées, des liens et des images pour chaque projet
-export const devProjects = {
+export const projetsDeveloppeur = {
     title: "Projets de Développement Web & Mobile",
     subtitle: "Une sélection de projets démontrant ma capacité à concevoir et implémenter des solutions complètes",
     projects: [
@@ -159,9 +163,10 @@ export const devProjects = {
         },
     ]
 };
+export const devProjects = projetsDeveloppeur;
 
 //secteur de compétences pour les systèmes embarqués et le bas niveau, avec des catégories, des compétences associées et des icônes pour chaque catégorie
-export const embeddedSkills = {
+export const competencesEmbarque = {
     title: "Systèmes Embarqués & Bas Niveau",
     subtitle: "Expertise matérielle issue de ma formation GEII et de mon cycle ingénieur",
     categories: [
@@ -187,8 +192,9 @@ export const embeddedSkills = {
         }
     ]
 };
+export const embeddedSkills = competencesEmbarque;
 
-export const hardwareProjects = {
+export const projetsEmbarque = {
     title: "Projets Robotique & Électronique",
     subtitle: "Conception de systèmes autonomes et interfaçage matériel",
     projects: [
@@ -239,8 +245,9 @@ export const hardwareProjects = {
         }
     ]
 };
+export const hardwareProjects = projetsEmbarque;
 
-export const embeddedEducation = {
+export const formationsEmbarque = {
     title: "Diplômes & Formation Technique",
     subtitle: "Un socle académique solide en électronique couplé à une ingénierie logicielle",
     items: [
@@ -265,8 +272,9 @@ export const embeddedEducation = {
             degree: "DUT GEII",
             school: "IUT Douala",
             description: "Acquisition des fondamentaux en électronique analogique/numérique, électrotechnique et automatismes.",
-            icon: "Settings2",
+            icon: "Cpu",
             color: "from-emerald-500 to-teal-500"
         }
     ]
 };
+export const embeddedEducation = formationsEmbarque;

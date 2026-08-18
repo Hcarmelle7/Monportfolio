@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "Flutter",
-    "embedded",
     "developpeuse"
   ],
   openGraph: {

@@ -14,8 +14,8 @@ interface ResumeModalProps {
 export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   const { activeProfile } = useProfile();
 
-  const cvFile = activeProfile === "embedded" ? cvFiles.embedded : cvFiles.developer;
-  const title = activeProfile === "embedded" ? cvTitles.embedded : cvTitles.developer;
+  const cvFile = activeProfile === "embarque" ? cvFiles.embarque : cvFiles.developpeur;
+  const title = activeProfile === "embarque" ? cvTitles.embarque : cvTitles.developpeur;
 
   return (
     <AnimatePresence>

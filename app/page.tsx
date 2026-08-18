@@ -1,21 +1,16 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react"; // Ajout de useEffect et Suspense
-import { useSearchParams } from "next/navigation"; // Ajout pour lire l'URL
+import { useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code2, Cpu } from "lucide-react";
 
-// --- IMPORTS COMMUNS ---
 import Hero from "@/components/sections/Hero";
 import Contact from "@/components/sections/Contact";
-
-// --- IMPORTS PAR CATÉGORIE ---
 import ProfilDeveloppement from "./dev/page";
 import ProfilEmbarque from "./embarque/page";
 import About from "@/components/sections/About";
 import { useProfile } from "@/context/ProfileContext";
 
-// --- NOUVEAU COMPOSANT : Gestionnaire d'URL ---
 function ProfileFromUrl() {
   const searchParams = useSearchParams();
   const tab = searchParams.get("tab");
@@ -23,18 +18,14 @@ function ProfileFromUrl() {
  
 
   useEffect(() => {
-    if (tab === "dev") {
-      setActiveProfile("developer");
+    if (tab === "dev" || tab === "developer" || tab === "developpeur") {
+      setActiveProfile("developpeur");
       return;
     }
 
-    if (tab === "embarque") {
-      setActiveProfile("embedded");
+    if (tab === "embarque" || tab === "embedded") {
+      setActiveProfile("embarque");
       return;
-    }
-
-    if (tab === "embedded" || tab === "developer") {
-      setActiveProfile(tab);
     }
   }, [tab, setActiveProfile]);
 
@@ -60,9 +51,9 @@ export default function Home() {
       {/* Le Contenu principal change selon le profil sélectionné */}
       <div className="min-h-screen">
         <AnimatePresence mode="wait">
-          {activeProfile === "developer" && (
+          {activeProfile === "developpeur" && (
             <motion.div
-              key="developer-content"
+              key="developpeur-content"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -73,9 +64,9 @@ export default function Home() {
             </motion.div>
           )}
 
-          {activeProfile === "embedded" && (
+          {activeProfile === "embarque" && (
             <motion.div
-              key="embedded-content"
+              key="embarque-content"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
