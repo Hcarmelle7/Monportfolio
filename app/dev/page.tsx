@@ -1,6 +1,6 @@
 import Competences from "@/components/profils/dev/Competences";
 import Projets from "@/components/profils/dev/Projets";
-import Certifications from "@/components/profils/dev/Certifications";
+import Certifications from "@/components/profils/dev/Formation";
 
 export default function ProfilDeveloppement() {
   return (
