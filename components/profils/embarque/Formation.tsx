@@ -1,9 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import { embeddedEducation } from "@/data/content";
+import { formationsEmbarque } from "@/data/content";
 import { GraduationCap, Zap, Cpu } from "lucide-react";
 
-export default function EmbeddedEducation() {
+export default function FormationEmbarque() {
   const iconMap = {
     GraduationCap: <GraduationCap className="w-5 h-5 text-white" />,
     Zap: <Zap className="w-5 h-5 text-white" />,
@@ -11,7 +11,7 @@ export default function EmbeddedEducation() {
   };
 
   return (
-    <section className="py-24 px-4 relative max-w-4xl mx-auto z-10" id="education">
+    <section className="py-24 px-4 relative max-w-4xl mx-auto z-10" id="formation">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -19,9 +19,9 @@ export default function EmbeddedEducation() {
         className="mb-16 text-center"
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-          {embeddedEducation.title}
+          {formationsEmbarque.title}
         </h2>
-        <p className="text-gray-400 text-lg">{embeddedEducation.subtitle}</p>
+        <p className="text-gray-400 text-lg">{formationsEmbarque.subtitle}</p>
       </motion.div>
 
       <div className="relative">
@@ -29,7 +29,7 @@ export default function EmbeddedEducation() {
         <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-purple-500 via-cyan-500 to-emerald-500 opacity-30 transform md:-translate-x-1/2"></div>
 
         <div className="space-y-12">
-          {embeddedEducation.items.map((item, index) => {
+          {formationsEmbarque.items.map((item, index) => {
             const isEven = index % 2 === 0;
             return (
               <div key={index} className={`relative flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''}`}>

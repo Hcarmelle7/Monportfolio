@@ -5,15 +5,15 @@ import Formation from "@/components/profils/embarque/Formation";
 export default function ProfilEmbarque() {
   return (
     <div className="flex flex-col gap-20 md:gap-12 pb-24 animate-fade-in">
-      <div id="skills">
+      <div id="competences">
         <Competences />
       </div>
 
-      <div id="projects">
+      <div id="projets">
         <Projets />
       </div>
 
-      <div id="education">
+      <div id="formation">
         <Formation />
       </div>
     </div>

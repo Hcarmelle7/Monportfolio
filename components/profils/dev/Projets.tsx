@@ -1,13 +1,13 @@
 "use client";
 import Image from 'next/image';
-import { devProjects } from '@/data/content';
+import { projetsDeveloppeur } from '@/data/content';
 import { motion } from 'framer-motion';
 import { ExternalLink, Code2 } from 'lucide-react';
 import SpotlightCard from '@/components/ui/SpotlighCard';
 
 export default function Projects() {
     return (
-        <section className="py-20 px-4 max-w-6xl mx-auto" id="projects">
+        <section className="py-20 px-4 max-w-6xl mx-auto" id="projets">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -15,15 +15,15 @@ export default function Projects() {
                 className="text-center mb-12"
             >
                 <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-white">
-                    {devProjects.title}
+                    {projetsDeveloppeur.title}
                 </h2>
                 <p className="text-gray-400 max-w-2xl mx-auto">
-                    {devProjects.subtitle}
+                    {projetsDeveloppeur.subtitle}
                 </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {devProjects.projects.map((item, index) => (
+                {projetsDeveloppeur.projects.map((item, index) => (
                     
                     <motion.div
                         key={item.id}

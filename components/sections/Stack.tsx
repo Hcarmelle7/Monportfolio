@@ -1,4 +1,4 @@
-import { engineeringStacks, webStacks } from "@/data/content";
+import { stackEmbarque, stackWeb } from "@/data/content";
 import { motion } from "framer-motion";
 
 export default function DevStack() {
@@ -18,18 +18,15 @@ export default function DevStack() {
         
         <motion.div
           className="flex w-max gap-16 md:gap-24 pr-16 md:pr-24 py-8"
-          
-          // L'animation va de 0 à la moitié de la div
           animate={{ x: ["0%", "-50%"] }}
-          
           transition={{
-            duration: 15, // Vitesse du tour complet
-            ease: "linear", // Vitesse constante 
-            repeat: Infinity, // Boucle infinie
+            duration: 15,
+            ease: "linear",
+            repeat: Infinity,
           }}
         >
           
-          {[...webStacks, ...webStacks].map((stack, index) => (
+          {[...stackWeb, ...stackWeb].map((stack, index) => (
             <div 
               key={index} 
               className="flex flex-col items-center justify-center gap-4 min-w-[100px]"
@@ -69,21 +66,18 @@ export  function EmbStack() {
         
         <motion.div
           className="flex w-max gap-8 md:gap-24 pr-8 md:pr-24 py-8"
-          // L'animation va de 0 à la moitié de la div
           animate={{ x: ["0%", "-50%"] }}
-          
           transition={{
-            duration: 15, // Vitesse du tour complet
-            ease: "linear", // Vitesse constante
-            repeat: Infinity, // Boucle infinie
+            duration: 15,
+            ease: "linear",
+            repeat: Infinity,
           }}
         >
-          {[...engineeringStacks, ...engineeringStacks].map((stack, index) => (
+          {[...stackEmbarque, ...stackEmbarque].map((stack, index) => (
             <div 
               key={index} 
               className="flex flex-col items-center justify-center gap-2 min-w-[100px]"
             >
-                {/* effet survol */}
               <div className="p-4 bg-white/5 border border-white/10 rounded-2xl shadow-lg transition-all duration-300 hover:scale-110 hover:bg-white/10 group-hover:opacity-100 opacity-60">
                 <stack.icon className={`w-8 h-8 md:w-16 md:h-16 ${stack.color}`} />
               </div>

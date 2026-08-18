@@ -2,7 +2,7 @@
 "use client";
 import { createContext, useContext, useState, ReactNode } from "react";
 
-type ProfileType = "developer" | "embedded";
+type ProfileType = "developpeur" | "embarque";
 
 interface ProfileContextType {
   activeProfile: ProfileType;
@@ -12,7 +12,7 @@ interface ProfileContextType {
 const ProfileContext = createContext<ProfileContextType | undefined>(undefined);
 
 export function ProfileProvider({ children }: { children: ReactNode }) {
-  const [activeProfile, setActiveProfile] = useState<ProfileType>("developer");
+  const [activeProfile, setActiveProfile] = useState<ProfileType>("developpeur");
   return (
     <ProfileContext.Provider value={{ activeProfile, setActiveProfile }}>
       {children}

@@ -23,7 +23,7 @@ export default function SimulateurPage() {
             <span>Système Embarqué Interactif</span>
           </div>
           <Link
-            href="/?tab=embedded#projects"
+            href="/?tab=embarque#projects"
             className=" text-gray-400 hover:text-white transition-colors flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:bg-white/10"
           >
             <ArrowLeft size={16} />

@@ -1,10 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { embeddedSkills, engineeringStacks } from "@/data/content";
+import { competencesEmbarque, stackEmbarque } from "@/data/content";
 import { Cpu, TerminalSquare, Activity, MonitorOff } from "lucide-react";
 import { EmbStack } from "@/components/sections/Stack";
 
-export default function EmbeddedSkills() {
+export default function CompetencesEmbarque() {
   const iconMap = {
     Cpu: <Cpu className="w-8 h-8 text-cyan-400" />,
     TerminalSquare: <TerminalSquare className="w-8 h-8 text-cyan-400" />,
@@ -13,7 +13,7 @@ export default function EmbeddedSkills() {
   };
 
   return (
-    <section className="py-24 px-4 relative max-w-6xl mx-auto z-10" id="embedded-skills">
+    <section className="py-24 px-4 relative max-w-6xl mx-auto z-10" id="competences-embarque">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -21,14 +21,14 @@ export default function EmbeddedSkills() {
         className="mb-8 text-center lg:text-left"
       >
         <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
-          {embeddedSkills.title}
+          {competencesEmbarque.title}
         </h2>
-        <p className="text-gray-400 text-lg">{embeddedSkills.subtitle}</p>
+        <p className="text-gray-400 text-lg">{competencesEmbarque.subtitle}</p>
         <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full mt-6 mx-auto lg:mx-0"></div>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {embeddedSkills.categories.map((category, index) => (
+        {competencesEmbarque.categories.map((category, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}

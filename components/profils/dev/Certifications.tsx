@@ -1,7 +1,6 @@
-// components/sections/WebCertifications.tsx
 "use client";
 import { motion } from "framer-motion";
-import { webCertifications } from "@/data/content";
+import { certificationsDeveloppeur } from "@/data/content";
 import { Code2, Database, Smartphone, Award } from "lucide-react";
 
 export default function WebCertifications() {
@@ -22,14 +21,14 @@ export default function WebCertifications() {
         <div className="flex justify-center items-center gap-3 mb-4">
           <Award className="w-8 h-8 text-purple-400" />
           <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
-            {webCertifications.title}
+            {certificationsDeveloppeur.title}
           </h2>
         </div>
-        <p className="text-gray-400 text-lg">{webCertifications.subtitle}</p>
+        <p className="text-gray-400 text-lg">{certificationsDeveloppeur.subtitle}</p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {webCertifications.items.map((cert, index) => (
+        {certificationsDeveloppeur.items.map((cert, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 30 }}
