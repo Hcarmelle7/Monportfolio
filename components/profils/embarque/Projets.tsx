@@ -31,7 +31,7 @@ export default function HardwareProjects() {
   const visibleProjects = projetsEmbarque.projects.slice(currentIndex, currentIndex + itemsPerPage);
 
   return (
-    <section className="py-24 px-4 relative max-w-6xl mx-auto z-10" id="projets-embarque">
+    <section className="py-24 px-4 relative max-w-6xl mx-auto z-10" id="projets">
       
       {/* En-tête */}
       <motion.div
