@@ -15,7 +15,7 @@ const config: Config = {
           DEFAULT: "#8b5cf6", // Violet 500
           foreground: "#ffffff",
         },
-        secondary: "#ec4899", // Pink 500 (pour les dégradés)
+        secondary: "#ec4899", // Pink 500 
         accent: "#7c3aed", // Violet 600
         card: "rgba(255, 255, 255, 0.05)", // Glassmorphism
       },

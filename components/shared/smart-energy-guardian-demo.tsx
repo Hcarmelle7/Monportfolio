@@ -97,7 +97,7 @@ export default function SmartEnergySimulator() {
     }
   };
 
-  // Ligne 1
+
   let displayLine1 = `Budget: ---- W`;
   if (tempMessage) {
     displayLine1 = tempMessage;

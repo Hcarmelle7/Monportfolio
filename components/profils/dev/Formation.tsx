@@ -11,7 +11,7 @@ export default function WebCertifications() {
   };
 
   return (
-    <section className="py-24 px-4 relative max-w-6xl mx-auto z-10" id="certifications">
+    <section className="py-24 px-4 relative max-w-6xl mx-auto z-10" id="formation">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

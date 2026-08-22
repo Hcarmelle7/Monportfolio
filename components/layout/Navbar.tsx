@@ -5,14 +5,11 @@ import { cn } from '@/lib/utils';
 import { AboutMe } from '@/data/content';
 import { ArrowLeft, Code2, Cpu, Github, Linkedin, Mail, } from 'lucide-react';
 import { useProfile } from "@/context/ProfileContext";
-// 1. On importe le hook pour lire l'URL
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 export default function Navbar() {
-  // 2. On récupère le chemin actuel
   const pathname = usePathname();
-  // ⚠️ Modifie "/simulateur" si le nom du dossier de ta page est différent
   const isSimulationPage = pathname === "/demo";
 
   const [scrolled, setScrolled] = useState(false);
@@ -29,8 +26,8 @@ export default function Navbar() {
     { name: 'Accueil', href: '/#' },
     { name: 'Profile', href: '/#about' },
     { name: 'Compétences', href: '/#skills' },
-    { name: 'Mes Réalisations', href: '/#projects' },
-    { name: 'Formation', href: '/#education' },
+    { name: 'Mes Réalisations', href: '/#projets' },
+    { name: 'Formation', href: '/#formation' },
     { name: 'Contact', href: '/#contact' },
   ];
 
@@ -43,7 +40,6 @@ export default function Navbar() {
           Carmelle<span className="text-white">.dev</span>
         </a>
 
-        {/* CENTRE : Titre du projet (Masqué sur tout petit écran pour éviter que ça se chevauche) */}
         <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <h1 className="text-2xl md:text-3xl text-center font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-500">
             Smart Energy Guardian
@@ -52,7 +48,7 @@ export default function Navbar() {
 
         {/* DROITE : Bouton Retour */}
         <Link 
-          href="/?tab=embarque#projects"
+          href="/?tab=embarque#projets"
           className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-sm font-medium text-gray-300 hover:text-white transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
@@ -103,7 +99,7 @@ export default function Navbar() {
           >
             {activeProfile === "developpeur" && (
               <motion.div
-                layoutId="nav-switch-pill" // La magie Framer Motion
+                layoutId="nav-switch-pill" 
                 className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full -z-10 shadow-[0_0_15px_rgba(168,85,247,0.4)]"
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
               />
