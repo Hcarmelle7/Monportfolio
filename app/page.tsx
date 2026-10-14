@@ -6,10 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import Hero from "@/components/sections/Hero";
 import Contact from "@/components/sections/Contact";
-import ProfilDeveloppement from "./dev/page";
-import ProfilEmbarque from "./embarque/page";
+import ProfilDeveloppement from "@/components/profils/ProfilDeveloppement";
+import ProfilEmbarque from "@/components/profils/ProfilEmbarque";
 import About from "@/components/sections/About";
 import { useProfile } from "@/context/ProfileContext";
+
 
 function ProfileFromUrl() {
   const searchParams = useSearchParams();
@@ -36,15 +37,13 @@ export default function Home() {
   const { activeProfile } = useProfile();
 
   return (
-    <div className="flex flex-col gap-20 md:gap-12 pb-8">
+    <div className="flex flex-col gap-20 md:gap-12 pb-8 w-full max-w-full overflow-x-hidden">
       
       <Suspense fallback={null}>
         <ProfileFromUrl />
       </Suspense>
 
-      <div className="min-h-[80vh] flex flex-col items-center justify-center gap-2 px-4 ">
-        <Hero />
-      </div>
+      <Hero />
       
       <About />
       

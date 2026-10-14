@@ -11,12 +11,12 @@ export default function WebCertifications() {
   };
 
   return (
-    <section className="py-24 px-4 relative max-w-6xl mx-auto z-10" id="formation">
+    <section className="pt-4 md:pt-6 pb-16 md:pb-20 px-4 relative max-w-6xl mx-auto z-10 scroll-mt-20 md:scroll-mt-24" id="formation">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mb-16 text-center"
+        className="mb-8 md:mb-10 text-center"
       >
         <div className="flex justify-center items-center gap-3 mb-4">
           <Award className="w-8 h-8 text-purple-400" />
