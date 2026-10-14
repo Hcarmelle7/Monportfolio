@@ -1,61 +1,38 @@
 
 "use client";
 
-import Link from "next/link";
-import { ArrowLeft, Cpu, Zap, Activity } from "lucide-react";
+import { Cpu, Zap, Activity } from "lucide-react";
 import { motion } from "framer-motion";
 import SmartEnergySimulator from "../../components/shared/smart-energy-guardian-demo";
 
 export default function SimulateurPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white relative flex items-center justify-center py-20 px-4 overflow-hidden">
+    <div className="min-h-screen bg-[#0a0a0a] text-white relative flex items-center justify-center pt-24 sm:pt-28 pb-16 px-4 overflow-hidden">
 
-      {/* Bouton de retour*/}
-
-
-      {/* Conteneur principal  */}
+      {/* Conteneur principal */}
       <div className="max-w-6xl w-full mx-auto">
 
-
-        {/* <div className="flex gap-4 items-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
-            <Cpu className="w-4 h-4" />
+        {/* En-tête*/}
+        <div className="mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-3">
+            <Cpu className="w-3.5 h-3.5" />
             <span>Système Embarqué Interactif</span>
           </div>
-          <Link
-            href="/?tab=embarque#projects"
-            className=" text-gray-400 hover:text-white transition-colors flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:bg-white/10"
-          >
-            <ArrowLeft size={16} />
-            <span className="text-sm font-medium">Retour au Portfolio</span>
-          </Link>
-          <h1 className="text-3xl md:text-4xl text-center font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-500 leading-tight">
-            Smart Energy Guardian
-          </h1>
-        </div> */}
-        <div>
-          {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
-                <Cpu className="w-4 h-4" />
-                <span>Système Embarqué Interactif</span>
-              </div> */}
 
-
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-400 text-sm sm:text-base max-w-2xl">
             Ce simulateur illustre la logique de délestage d'un microcontrôleur.
             Testez le système en temps réel en définissant un budget et en faisant varier la charge électrique.
           </p>
         </div>
 
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
 
-
-        <div className="flex flex-col lg:flex-row items-center ">
-
-          {/* COLONNE GAUCHE : LES EXPLICATIONS  */}
+          {/* COLONNE GAUCHE : EXPLICATIONS */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex-4 w-full lg:w-1/2 space-y-5 lg:mt-[30px]"
+            className="w-full lg:w-1/2 space-y-5"
           >
 
 
@@ -98,7 +75,7 @@ export default function SimulateurPage() {
             </div>
           </motion.div>
 
-          {/* COLONNE DROITE : LE SIMULATEUR */}
+          {/* COLONNE DROITE : SIMULATEUR */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
