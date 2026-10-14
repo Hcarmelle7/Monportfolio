@@ -4,7 +4,6 @@ import "./globals.css";
 import Background from "@/components/ui/Background";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import TunnelBackground from "@/components/ui/TunnelBackground";
 import { ProfileProvider } from "@/context/ProfileContext";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -44,19 +43,16 @@ export default function RootLayout({
     <html lang="fr" className="dark">
       <body className={inter.className} >
         <Background />
-        {/* <TunnelBackground /> */}
         
-        
-       <ProfileProvider>
-          
+        <ProfileProvider>
           <Navbar />
 
           <main>
             {children}
           </main>
 
+          <Footer />
         </ProfileProvider>
-        <Footer />
       </body>
     </html>
   );

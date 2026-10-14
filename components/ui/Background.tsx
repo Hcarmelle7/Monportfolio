@@ -14,21 +14,33 @@ const colors = [
   "bg-pink-600"
 ];
 
+interface Square {
+  id: number;
+  size: number;
+  initialX: number;
+  initialY: number;
+  color: string;
+  duration: number;
+  delay: number;
+  waypointsX: string[];
+  waypointsY: string[];
+}
+
 export default function Background() {
-  const [squares, setSquares] = useState<any[]>([]);
+  const [squares, setSquares] = useState<Square[]>([]);
 
   useEffect(() => {
-    // On génère 15 carrés avec des propriétés aléatoires
-    const generatedSquares = [...Array(15)].map((_, i) => ({
+    // On génère 15 carrés avec des propriétés aléatoires stables
+    const generatedSquares: Square[] = [...Array(15)].map((_, i) => ({
       id: i,
-      // Taille entre 50px et 150px
       size: random(50, 150),
       initialX: random(0, 100),
       initialY: random(0, 100),
-      color: colors[random(0, colors.length - 1)], // Couleur aléatoire parmi la palette
+      color: colors[random(0, colors.length - 1)],
       duration: random(20, 40),
-      // Délai avant le début pour qu'ils ne partent pas tous en même temps
       delay: random(0, 5),
+      waypointsX: ["0vw", `${random(-50, 50)}vw`, `${random(-50, 50)}vw`, "0vw"],
+      waypointsY: ["0vh", `${random(-50, 50)}vh`, `${random(-50, 50)}vh`, "0vh"],
     }));
     setSquares(generatedSquares);
   }, []);
@@ -44,38 +56,23 @@ export default function Background() {
           style={{
             width: sq.size,
             height: sq.size,
-            // Un flou modéré pour l'effet "lumineux" tout en gardant la forme carrée
             filter: "blur(8px)", 
-            // Ombre portée de la même couleur pour renforcer l'effet néon
             boxShadow: `0 0 20px 5px currentColor`, 
-            opacity: 0.25, // Assez transparent pour ne pas gêner la lecture
+            opacity: 0.25,
             top: `${sq.initialY}%`,
             left: `${sq.initialX}%`,
           }}
           animate={{
-            // Le carré va bouger vers ces positions relatives (en pourcentage de l'écran)
-            x: [
-              `0vw`, 
-              `${random(-50, 50)}vw`, 
-              `${random(-50, 50)}vw`, 
-              `0vw`
-            ],
-            y: [
-              `0vh`, 
-              `${random(-50, 50)}vh`, 
-              `${random(-50, 50)}vh`, 
-              `0vh`
-            ],
-            // Rotation lente pendant le mouvement pour ajouter du dynamisme
+            x: sq.waypointsX,
+            y: sq.waypointsY,
             rotate: [0, 180, 360],
-            // Légère variation d'échelle pour simuler un effet de "respiration" lumineuse
             scale: [1, 1.2, 0.9, 1]
           }}
           transition={{
             duration: sq.duration,
             ease: "easeInOut",
-            repeat: Infinity, // Boucle infinie
-            repeatType: "reverse", // Fait l'animation dans un sens puis dans l'autre 
+            repeat: Infinity,
+            repeatType: "reverse",
             delay: sq.delay,
           }}
         />
