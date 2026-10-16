@@ -23,7 +23,7 @@ export const AboutMe = {
     name: "Carmelle Helle",
     role: "Ingénieure Systèmes Embarqués & Développeuse Full Stack",
     bio: "Passionnée par l'architecture logicielle et le développement web moderne. Je transforme des idées complexes en expériences utilisateur fluides avec React, Symfony et Flutter.",
-    image: "/images/profile.png",
+    image: "/images/profile.webp",
     socials: {
         github: "https://github.com/Hcarmelle7",
         linkedin: "https://linkedin.com/in/carmelle-helle",
@@ -142,24 +142,24 @@ export const projetsDeveloppeur = {
             title: "Learnify - Application Mobile",
             description: "Développement Front-end complet d'une application mobile. Gestion d'état complexe et optimisation des performances.",
             tech: ["Flutter", "Dart", "Firebase"],
-            link: "#",
-            image: "/images/learnify.png"
+            link: "https://github.com/Hcarmelle7/Learnify",
+            image: "/images/learnify.webp"
         },
         {
             id: 2,
             title: "Catalogue_musicale - SaaS Platform",
             description: "Développement Front-end et backend d'une plateforme de catalogue musical. Gestion de l'option Karaoké et intégration d'une base de données pour les utilisateurs et les chansons.",
             tech: ["C#", "GTK4", "SQLite", "Supabase"],
-            link: "#",
-            image: "/images/musicaly.jpg"
+            link: "https://github.com/Hcarmelle7/Catalogue_musicale",
+            image: "/images/musicaly.webp"
         },
         {
             id: 3,
-            title: "Artify - Application web",
+            title: "ArtConnect - Application web",
             description: "Developpement front-end et back-end d'une application web de gestion de galerie d'art. Intégration d'une API tierce pour la reconnaissance d'images.",
             tech: ["React", "Node.js", "Tailwind", "mySQL"],
-            link: "#",
-            image: "/images/artify.png"
+            link: "https://github.com/Hcarmelle7/Artconnect_Frontend",
+            image: "/images/artify.webp"
         },
     ]
 };
@@ -227,8 +227,7 @@ export const projetsEmbarque = {
                 "Interfaçage des capteurs de distance et caméras"
             ],
             techStack: ["C++", "Microcontrôleurs", "Capteurs IR/Ultrasons", "Électronique embarquée"],
-            icon: "Plane",
-            demoLink: "/demo"
+            icon: "Plane"
         },
         {
             title: "Système de Backup Électrique Portatif",
@@ -240,8 +239,7 @@ export const projetsEmbarque = {
                 "Sécurisation du circuit électrique"
             ],
             techStack: ["Électrotechnique", "Électronique de puissance", "Proteus", "CAO"],
-            icon: "BatteryCharging",
-            demoLink: "/demo"
+            icon: "BatteryCharging"
         }
     ]
 };

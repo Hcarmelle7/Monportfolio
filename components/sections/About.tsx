@@ -88,7 +88,7 @@ export default function About() {
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 via-transparent to-transparent z-10 pointer-events-none" />
 
                             <Image
-                                src="/images/profile.png"
+                                src="/images/profile.webp"
                                 alt="Carmelle Helle"
                                 fill
                                 sizes="(max-width: 768px) 256px, 33vw"
@@ -107,7 +107,7 @@ export default function About() {
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 via-transparent to-transparent z-10 pointer-events-none" />
 
                             <Image
-                                src="/images/profile.png"
+                                src="/images/profile.webp"
                                 alt="Carmelle Helle"
                                 fill
                                 sizes="(max-width: 768px) 256px, 33vw"
