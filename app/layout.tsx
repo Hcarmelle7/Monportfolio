@@ -52,6 +52,36 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Carmelle Helle",
+  alternateName: "Gertrude Carmelle Rose Helle",
+  jobTitle: "Ingénieure Systèmes Embarqués & Développeuse Full Stack",
+  url: "https://carmelle.dev",
+  image: "https://carmelle.dev/images/profile.webp",
+  sameAs: [
+    "https://github.com/Hcarmelle7",
+    "https://linkedin.com/in/carmelle-helle",
+  ],
+  alumniOf: {
+    "@type": "EducationalOrganization",
+    name: "ESIEA",
+  },
+  knowsAbout: [
+    "Systèmes Embarqués",
+    "IoT",
+    "C++",
+    "C",
+    "STM32",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Flutter",
+    "Électronique Industrielle",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -59,6 +89,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={inter.className} >
         <Background />
         
