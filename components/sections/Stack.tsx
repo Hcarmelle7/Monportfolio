@@ -16,12 +16,12 @@ interface TechStackProps {
 
 export function TechStack({ id, title, subtitle, gradientClass, items }: TechStackProps) {
   return (
-    <section id={id} className="pt-14 md:pt-20 pb-4 md:pb-6 relative w-full max-w-full overflow-hidden">
+    <div id={id} className="pt-14 md:pt-20 pb-4 md:pb-6 relative w-full max-w-full overflow-hidden">
       
       <div className="max-w-6xl mx-auto px-4 mb-10 md:mb-14 text-center">
-        <h2 className={`text-2xl sm:text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent ${gradientClass}`}>
+        <h3 className={`text-2xl sm:text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent ${gradientClass}`}>
           {title}
-        </h2>
+        </h3>
         <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
           {subtitle}
         </p>
@@ -29,10 +29,10 @@ export function TechStack({ id, title, subtitle, gradientClass, items }: TechSta
 
       <div className="relative w-full max-w-full flex overflow-hidden group [mask-image:_linear-gradient(to_right,transparent_0,_black_32px,_black_calc(100%-32px),transparent_100%)] md:[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
         
-        <div className="flex w-max gap-8 sm:gap-12 md:gap-20 pr-8 sm:pr-12 md:pr-20 py-5 sm:py-7 animate-marquee group-hover:[animation-play-state:paused]">
+        <div className="flex w-max gap-8 sm:gap-12 md:gap-20 pr-8 sm:pr-12 md:pr-20 py-5 sm:py-7 animate-marquee group-hover:[animation-play-state:paused] motion-reduce:animate-none">
           {[...items, ...items].map((stack, index) => (
             <div 
-              key={index} 
+              key={`${stack.name}-${index}`} 
               className="flex flex-col items-center justify-center gap-3 sm:gap-4 min-w-[84px] sm:min-w-[100px] cursor-pointer"
             >
               <div className="p-3.5 sm:p-4 bg-white/5 border border-white/10 rounded-2xl shadow-lg transition-all duration-300 hover:scale-110 hover:bg-white/10 group-hover:opacity-100 opacity-70">
@@ -47,7 +47,7 @@ export function TechStack({ id, title, subtitle, gradientClass, items }: TechSta
         </div>
 
       </div>
-    </section>
+    </div>
   );
 }
 

@@ -103,7 +103,7 @@ export default function Hero() {
                 window.history.pushState(null, "", "#projets");
               }
             }}
-            className="w-full sm:w-auto justify-center px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-full font-medium transition-all flex items-center gap-2 group shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5"
+            className="w-full sm:w-auto justify-center px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-full font-medium transition-all flex items-center gap-2 group shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
           >
             Voir mes projets
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -116,9 +116,10 @@ export default function Hero() {
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Profil GitHub de Carmelle Helle"
-              className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"
+              className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded-sm"
             >
               <Github size={20} />
+              <span className="sr-only"> (ouvre un nouvel onglet)</span>
             </a>
             <div className="w-px h-4 bg-white/10"></div>
             <a 
@@ -126,15 +127,16 @@ export default function Hero() {
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Profil LinkedIn de Carmelle Helle"
-              className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"
+              className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded-sm"
             >
               <Linkedin size={20} />
+              <span className="sr-only"> (ouvre un nouvel onglet)</span>
             </a>
             <div className="w-px h-4 bg-white/10"></div>
             <a 
               href={AboutMe.socials.email} 
               aria-label="Envoyer un email à Carmelle Helle"
-              className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform"
+              className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded-sm"
             >
               <Mail size={20} />
             </a>
@@ -144,7 +146,7 @@ export default function Hero() {
           <button 
             onClick={() => setIsCvModalOpen(true)}
             aria-label="Consulter et télécharger mon CV"
-            className="w-full sm:w-auto justify-center px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-full font-medium transition-all flex items-center gap-2 group shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5 cursor-pointer"
+            className="w-full sm:w-auto justify-center px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-full font-medium transition-all flex items-center gap-2 group shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
           >
             Voir mon CV
           </button>

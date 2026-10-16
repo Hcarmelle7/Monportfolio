@@ -127,9 +127,10 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Accéder à mon ${link.label}`}
-                className={`w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br border border-white/15 ${link.color} text-white hover:scale-110 transition-all duration-300 shadow-md`}
+                className={`w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br border border-white/15 ${link.color} text-white hover:scale-110 transition-all duration-300 shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400`}
               >
                 {link.icon}
+                <span className="sr-only"> (ouvre un nouvel onglet)</span>
               </a>
               ))}
               
@@ -197,7 +198,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group relative w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:opacity-70 disabled:hover:scale-100"
+              className="group relative w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:opacity-70 disabled:hover:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
             >
               {isSubmitting ? (
                 <span className="animate-pulse">Envoi en cours...</span>

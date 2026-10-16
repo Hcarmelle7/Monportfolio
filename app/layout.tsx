@@ -10,8 +10,9 @@ import { Analytics } from "@vercel/analytics/next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://carmelle.dev"),
   title: "Carmelle Helle | Ingénieure Systèmes Embarqués & Développeuse Full Stack",
-  description: "Portfolio de Carmelle Helle, ingénieure systèmes embarqués et développeuse full stack spécialisée en React, Next.js, Node.js et Flutter.",
+  description: "Portfolio de Carmelle Helle, ingénieure systèmes embarqués et développeuse full stack spécialisée en React, Next.js, Node.js, Flutter et IoT.",
   keywords: [
     "Carmelle Helle",
     "portfolio",
@@ -20,19 +21,35 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "Flutter",
-    "developpeuse"
+    "développeuse",
+    "systèmes embarqués",
+    "IoT",
+    "C++"
   ],
+  authors: [{ name: "Carmelle Helle" }],
+  creator: "Carmelle Helle",
   openGraph: {
-    title: "Carmelle Helle | Portfolio",
-    description: "Ingénieure systèmes embarqués et développeuse full stack.",
+    title: "Carmelle Helle | Ingénieure Systèmes Embarqués & Développeuse Full Stack",
+    description: "Portfolio de Carmelle Helle. Projets concrets en ingénierie embarquée, IoT et architectures web & mobile modernes.",
+    url: "https://carmelle.dev",
+    siteName: "Carmelle Helle Portfolio",
+    locale: "fr_FR",
     type: "website",
-    locale: "fr_FR"
+    images: [
+      {
+        url: "/images/profile.webp",
+        width: 800,
+        height: 800,
+        alt: "Carmelle Helle - Ingénieure Systèmes Embarqués & Développeuse Full Stack",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carmelle Helle | Portfolio",
-    description: "Ingénieure systèmes embarqués et développeuse full stack."
-  }
+    title: "Carmelle Helle | Ingénieure Systèmes Embarqués & Développeuse Full Stack",
+    description: "Portfolio de Carmelle Helle. Projets concrets en ingénierie embarquée, IoT et architectures web & mobile modernes.",
+    images: ["/images/profile.webp"],
+  },
 };
 
 export default function RootLayout({

@@ -79,7 +79,7 @@ export default function HardwareProjects() {
           <button
             onClick={prevSlide}
             aria-label="Voir les projets précédents"
-            className="hidden sm:flex p-3 rounded-full bg-[#0a0a0a] border border-emerald-500/20 hover:bg-white/5 hover:border-emerald-500/50 transition-all text-emerald-400 flex-shrink-0 z-10 cursor-pointer"
+            className="hidden sm:flex p-3 rounded-full bg-[#0a0a0a] border border-emerald-500/20 hover:bg-white/5 hover:border-emerald-500/50 transition-all text-emerald-400 flex-shrink-0 z-10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
@@ -142,7 +142,7 @@ export default function HardwareProjects() {
                       <div className="mt-3 pt-3 border-t border-white/5">
                         <a
                           href={project.demoLink}
-                          className="inline-flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
+                          className="inline-flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm"
                         >
                           Lancer la simulation →
                         </a>
@@ -160,7 +160,7 @@ export default function HardwareProjects() {
           <button
             onClick={nextSlide}
             aria-label="Voir les projets suivants"
-            className="hidden sm:flex p-3 rounded-full bg-[#0a0a0a] border border-emerald-500/20 hover:bg-white/5 hover:border-emerald-500/50 transition-all text-emerald-400 flex-shrink-0 z-10 cursor-pointer"
+            className="hidden sm:flex p-3 rounded-full bg-[#0a0a0a] border border-emerald-500/20 hover:bg-white/5 hover:border-emerald-500/50 transition-all text-emerald-400 flex-shrink-0 z-10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -174,7 +174,7 @@ export default function HardwareProjects() {
           <button
             onClick={prevSlide}
             aria-label="Voir le projet précédent"
-            className="p-2.5 rounded-full bg-[#0a0a0a] border border-emerald-500/20 text-emerald-400 active:scale-95 cursor-pointer"
+            className="p-2.5 rounded-full bg-[#0a0a0a] border border-emerald-500/20 text-emerald-400 active:scale-95 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -184,7 +184,7 @@ export default function HardwareProjects() {
               <button
                 key={idx}
                 onClick={() => goToSlide(idx)}
-                className={`transition-all duration-300 rounded-full cursor-pointer ${
+                className={`transition-all duration-300 rounded-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                   currentIndex === idx
                     ? "w-7 h-2 bg-emerald-500"
                     : "w-2 h-2 bg-gray-600"
@@ -197,7 +197,7 @@ export default function HardwareProjects() {
           <button
             onClick={nextSlide}
             aria-label="Voir le projet suivant"
-            className="p-2.5 rounded-full bg-[#0a0a0a] border border-emerald-500/20 text-emerald-400 active:scale-95 cursor-pointer"
+            className="p-2.5 rounded-full bg-[#0a0a0a] border border-emerald-500/20 text-emerald-400 active:scale-95 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -211,7 +211,7 @@ export default function HardwareProjects() {
             <button
               key={idx}
               onClick={() => goToSlide(idx)}
-              className={`transition-all duration-300 rounded-full cursor-pointer ${
+              className={`transition-all duration-300 rounded-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                 currentIndex === idx
                   ? "w-8 h-2 bg-emerald-500" // Dot actif allongé
                   : "w-2 h-2 bg-gray-600 hover:bg-gray-400" // Dot inactif

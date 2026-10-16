@@ -51,10 +51,11 @@ export default function Projects() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={`Voir le projet ${item.title}`}
-                                        className="absolute top-3 right-3 p-2 bg-black/60 hover:bg-purple-600 text-white rounded-full backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-110 shadow-lg cursor-pointer"
+                                        className="absolute top-3 right-3 p-2 bg-black/60 hover:bg-purple-600 text-white rounded-full backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-110 shadow-lg cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
                                         title="Voir le projet"
                                     >
                                         <ExternalLink size={16} />
+                                        <span className="sr-only"> (ouvre un nouvel onglet)</span>
                                     </a>
                                 </div>
 

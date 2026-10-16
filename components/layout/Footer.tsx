@@ -142,11 +142,12 @@ export default function Footer() {
                     href={AboutMe.socials.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1.5 group"
+                    className="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1.5 group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-purple-400 rounded-sm"
                   >
                     <Github size={13} className="text-gray-500 group-hover:text-white transition-colors" />
                     <span>GitHub</span>
                     <ArrowUpRight size={11} className="text-gray-600 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <span className="sr-only"> (ouvre un nouvel onglet)</span>
                   </a>
                 </li>
                 <li>
@@ -154,11 +155,12 @@ export default function Footer() {
                     href={AboutMe.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1.5 group"
+                    className="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1.5 group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-purple-400 rounded-sm"
                   >
                     <Linkedin size={13} className="text-gray-500 group-hover:text-white transition-colors" />
                     <span>LinkedIn</span>
                     <ArrowUpRight size={11} className="text-gray-600 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <span className="sr-only"> (ouvre un nouvel onglet)</span>
                   </a>
                 </li>
                 <li>
@@ -186,7 +188,7 @@ export default function Footer() {
             <button
               onClick={scrollToTop}
               aria-label="Retourner en haut de page"
-              className="hidden sm:flex px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:border-purple-500/30 transition-all items-center gap-1.5 sm:gap-2 text-xs cursor-pointer group"
+              className="hidden sm:flex px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:border-purple-500/30 transition-all items-center gap-1.5 sm:gap-2 text-xs cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
             >
               <span>Haut de page</span>
               <ArrowUp size={13} className="group-hover:-translate-y-0.5 transition-transform text-purple-400" />
