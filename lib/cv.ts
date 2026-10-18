@@ -1,9 +1,13 @@
+export const cvFile = "/cv-Ingenieure.pdf";
+export const cvTitle = "CV - Gertrude Helle | Ingénieure Informatique";
+
 export const cvFiles = {
-  developpeur: "/docs/cv/cv-developpeur-helle.pdf",
-  embarque: "/docs/cv/cv-embarque-helle.pdf"
+  developpeur: cvFile,
+  embarque: cvFile
 };
 
 export const cvTitles = {
-  developpeur: "CV - Développeuse Full Stack",
-  embarque: "CV - Electronique & Embarqué"
+  developpeur: cvTitle,
+  embarque: cvTitle
+
 };

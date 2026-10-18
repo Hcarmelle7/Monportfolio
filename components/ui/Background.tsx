@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 // Fonction utilitaire pour générer un nombre aléatoire entre min et max 
@@ -28,6 +28,7 @@ interface Square {
 
 export default function Background() {
   const [squares, setSquares] = useState<Square[]>([]);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     // On génère 15 carrés avec des propriétés aléatoires stables
@@ -62,12 +63,16 @@ export default function Background() {
             top: `${sq.initialY}%`,
             left: `${sq.initialX}%`,
           }}
-          animate={{
-            x: sq.waypointsX,
-            y: sq.waypointsY,
-            rotate: [0, 180, 360],
-            scale: [1, 1.2, 0.9, 1]
-          }}
+          animate={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  x: sq.waypointsX,
+                  y: sq.waypointsY,
+                  rotate: [0, 180, 360],
+                  scale: [1, 1.2, 0.9, 1],
+                }
+          }
           transition={{
             duration: sq.duration,
             ease: "easeInOut",

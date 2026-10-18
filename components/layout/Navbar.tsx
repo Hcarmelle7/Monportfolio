@@ -215,7 +215,7 @@ export default function Navbar() {
               <button
                 onClick={() => handleProfileSwitch("developpeur")}
                 aria-label="Basculer vers le profil Développeur"
-                className={`relative z-10 flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 cursor-pointer ${
+                className={`relative z-10 flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
                   activeProfile === "developpeur" ? "text-white" : "text-gray-400 hover:text-white"
                 }`}
               >
@@ -234,7 +234,7 @@ export default function Navbar() {
               <button
                 onClick={() => handleProfileSwitch("embarque")}
                 aria-label="Basculer vers le profil Systèmes Embarqués"
-                className={`relative z-10 flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 cursor-pointer ${
+                className={`relative z-10 flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
                   activeProfile === "embarque" ? "text-white" : "text-gray-400 hover:text-white"
                 }`}
               >
