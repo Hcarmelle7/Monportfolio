@@ -93,7 +93,7 @@ export default function Hero() {
               e.preventDefault();
               const elem = document.getElementById("projets");
               if (elem) {
-                const navOffset = window.innerWidth >= 768 ? 75 : 65;
+                const navOffset = window.innerWidth >= 768 ? 80 : 70;
                 const elementTop = elem.getBoundingClientRect().top + window.scrollY;
                 window.scrollTo({
                   top: Math.max(0, elementTop - navOffset),

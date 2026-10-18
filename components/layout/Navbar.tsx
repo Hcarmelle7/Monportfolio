@@ -33,28 +33,32 @@ export default function Navbar() {
     const sectionIds = ['about', 'competences', 'projets', 'formation', 'contact'];
 
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 40);
 
       // Si tout en haut de page, la section active est l'accueil
-      if (window.scrollY < 200) {
+      if (scrollY < 180) {
         setActiveSection('');
         return;
       }
 
-      // Détecter la section visible
-      const detectionOffset = window.innerWidth >= 768 ? 120 : 90;
-      const scrollPosition = window.scrollY + detectionOffset;
+      // Si l'utilisateur est tout en bas de page, activer directement contact
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      if (windowHeight + scrollY >= docHeight - 70) {
+        setActiveSection('contact');
+        return;
+      }
+
+      // Détection fiable avec getBoundingClientRect (indépendant des offsetParent)
+      const detectionOffset = window.innerWidth >= 768 ? 130 : 100;
       let current = '';
 
       for (const id of sectionIds) {
         const element = document.getElementById(id);
         if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            current = id;
-            break;
-          } else if (scrollPosition >= top) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= detectionOffset) {
             current = id;
           }
         }
@@ -78,8 +82,8 @@ export default function Navbar() {
   ];
 
   const isLinkActive = (href: string) => {
-    if (href === '/#') return activeSection === '';
-    const id = href.replace('/#', '');
+    if (href === '/#' || href === '#' || href === '/') return activeSection === '';
+    const id = href.replace('/#', '').replace('#', '');
     return activeSection === id;
   };
 
@@ -92,16 +96,17 @@ export default function Navbar() {
 
     e.preventDefault();
 
-    if (href === "/#" || href === "#") {
+    if (href === "/#" || href === "#" || href === "/") {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       window.history.pushState(null, "", "/");
+      setActiveSection('');
       return;
     }
 
     const targetId = href.replace(/^\/?#/, "");
     const elem = document.getElementById(targetId);
     if (elem) {
-      const navOffset = window.innerWidth >= 768 ? 75 : 65;
+      const navOffset = window.innerWidth >= 768 ? 80 : 70;
       const elementTop = elem.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: Math.max(0, elementTop - navOffset),
@@ -109,24 +114,35 @@ export default function Navbar() {
         behavior: "smooth",
       });
       window.history.pushState(null, "", `#${targetId}`);
+      setActiveSection(targetId);
     }
   };
 
   const handleProfileSwitch = (profile: "developpeur" | "embarque") => {
+    if (profile === activeProfile) return;
+
+    // Retenir la section en cours de consultation
+    const currentSectionToKeep = activeSection;
+
     setActiveProfile(profile);
-    if (activeSection && activeSection !== "" && pathname === "/") {
-      setTimeout(() => {
-        const elem = document.getElementById(activeSection);
-        if (elem) {
-          const navOffset = window.innerWidth >= 768 ? 75 : 65;
-          const elementTop = elem.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({
-            top: Math.max(0, elementTop - navOffset),
-            left: 0,
-            behavior: "smooth",
-          });
-        }
-      }, 70);
+
+    // Réalignement précis sur la section équivalente du nouveau profil
+    if (currentSectionToKeep && currentSectionToKeep !== "" && pathname === "/") {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const elem = document.getElementById(currentSectionToKeep);
+          if (elem) {
+            const navOffset = window.innerWidth >= 768 ? 80 : 70;
+            const elementTop = elem.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: Math.max(0, elementTop - navOffset),
+              left: 0,
+              behavior: "auto",
+            });
+            setActiveSection(currentSectionToKeep);
+          }
+        });
+      });
     }
   };
 
