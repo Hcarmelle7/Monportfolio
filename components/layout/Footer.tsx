@@ -103,8 +103,20 @@ export default function Footer() {
                 <button
                   onClick={() => {
                     setActiveProfile("developpeur");
-                    const el = document.getElementById("competences");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                    requestAnimationFrame(() => {
+                      requestAnimationFrame(() => {
+                        const el = document.getElementById("competences");
+                        if (el) {
+                          const navOffset = window.innerWidth >= 768 ? 80 : 70;
+                          const elementTop = el.getBoundingClientRect().top + window.scrollY;
+                          window.scrollTo({
+                            top: Math.max(0, elementTop - navOffset),
+                            left: 0,
+                            behavior: "smooth",
+                          });
+                        }
+                      });
+                    });
                   }}
                   className={`flex items-center gap-1.5 text-left transition-colors cursor-pointer group ${activeProfile === "developpeur" ? "text-purple-400 font-medium" : "text-gray-400 hover:text-white"
                     }`}
@@ -119,8 +131,20 @@ export default function Footer() {
                 <button
                   onClick={() => {
                     setActiveProfile("embarque");
-                    const el = document.getElementById("competences");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                    requestAnimationFrame(() => {
+                      requestAnimationFrame(() => {
+                        const el = document.getElementById("competences");
+                        if (el) {
+                          const navOffset = window.innerWidth >= 768 ? 80 : 70;
+                          const elementTop = el.getBoundingClientRect().top + window.scrollY;
+                          window.scrollTo({
+                            top: Math.max(0, elementTop - navOffset),
+                            left: 0,
+                            behavior: "smooth",
+                          });
+                        }
+                      });
+                    });
                   }}
                   className={`flex items-center gap-1.5 text-left transition-colors cursor-pointer group ${activeProfile === "embarque" ? "text-cyan-400 font-medium" : "text-gray-400 hover:text-white"
                     }`}

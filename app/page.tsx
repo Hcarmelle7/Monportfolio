@@ -2,7 +2,7 @@
 
 import { useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import Hero from "@/components/sections/Hero";
 import Contact from "@/components/sections/Contact";
@@ -49,33 +49,19 @@ export default function Home() {
       
       {/* Le Contenu principal change selon le profil sélectionné */}
       <div className="min-h-screen">
-        <AnimatePresence mode="wait">
-          {activeProfile === "developpeur" && (
-            <motion.div
-              key="developpeur-content"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="flex flex-col gap-20 md:gap-32"
-            >
-              <ProfilDeveloppement />
-            </motion.div>
+        <motion.div
+          key={activeProfile}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          className="flex flex-col gap-20 md:gap-32"
+        >
+          {activeProfile === "developpeur" ? (
+            <ProfilDeveloppement />
+          ) : (
+            <ProfilEmbarque />
           )}
-
-          {activeProfile === "embarque" && (
-            <motion.div
-              key="embarque-content"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="flex flex-col gap-20 md:gap-32"
-            >
-              <ProfilEmbarque />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        </motion.div>
       </div>
 
       <Contact />
