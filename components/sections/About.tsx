@@ -127,7 +127,7 @@ export default function About() {
                 >
                    
 
-                    <div className="space-y-4 md:space-y-6 text-gray-300 text-left md:text-justify text-base md:text-lg leading-relaxed">
+                    <div className="space-y-2 md:space-y-4 text-gray-300 text-left md:text-justify text-base leading-relaxed">
                         {about.description.map((paragraph, index) => (
                             <p key={index}>{paragraph}</p>
                         ))}

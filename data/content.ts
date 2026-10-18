@@ -20,8 +20,8 @@ import {
 
 //fichier de données pour le portfolio, contenant mes informations personnelles, mes compétences et mes projets
 export const AboutMe = {
-    name: "Carmelle Helle",
-    role: "Ingénieure Systèmes Embarqués & Développeuse Full Stack",
+    name: "Carmelle HELLE",
+    role: "Ingénieure Informatique · Systèmes Embarqués & Développement Full Stack",
     bio: "Passionnée par l'architecture logicielle et le développement web moderne. Je transforme des idées complexes en expériences utilisateur fluides avec React, Symfony et Flutter.",
     image: "/images/profile.webp",
     socials: {
@@ -32,12 +32,13 @@ export const AboutMe = {
 };
 
 export const about = {
-    title: "À propos de moi",
+    title: "Bon, je me présente ?",
     description: [
-        "Hello ! Je m'appelle Gertrude Carmelle Rose Helle, étudiante ingénieure passionnée par la technologie de A à Z. Mon ambition ? Fonder un jour ma propre marque Tech d'envergure mondiale.",
-        "Pour bâtir des bases solides, j'ai d'abord exploré le \"matériel\" via un DUT et une Licence en Génie Électrique (GEII) afin de maîtriser le cœur physique des machines.",
-        "Puis, la curiosité l'a emporté ! Pour comprendre ce qui se passe de l'autre côté de l'écran, j'ai consacré une année intensive à me former en développement Web et Mobile. Mon but : maîtriser le code pour concrétiser mes propres idées.",
-        "Aujourd'hui, j'ai fait le grand saut en intégrant le cycle ingénieur de l'ESIEA en France pour repousser mes limites. Désormais capable de lier un matériel de qualité à une architecture logicielle moderne, j'avance chaque jour avec des idées plein la tête !"
+        "Moi, c'est Gertrude Carmelle Rose Helle, ",
+        "Je suis étudiante ingénieure en informatique à l'ESIEA, en majeure Systèmes Embarqués et Autonomes. Passionnée par la tech de bout en bout, j'aime transformer une idée en quelque chose de concret : faire dialoguer les composants électroniques au ras du processeur avec des interfaces modernes à l'écran.",
+        "J'ai commencé par explorer le côté matériel avec un DUT puis une Licence en Génie Électrique et Informatique Industrielle (GEII) à l'IUT de Douala. Une fois le cœur des machines apprivoisé, j'ai voulu voir ce qui se passe de l'autre côté de l'écran : j'ai donc enchaîné sur des formations intensives en développement Web et Mobile Full Stack pour créer mes propres outils.",
+        "Aujourd'hui, j'apprends à vitesse grand V, je code, je teste et je construis mes projets, du C bas niveau jusqu'aux architectures logicielles. Et un jour, qui sait, je lancerai peut-être ma propre marque tech mondiale. Autant commencer quelque part !",
+        "Et oui, j'aime le violet...😅"
     ],
     quickFacts: [
         { label: "L'objectif", value: "Fonder ma marque Tech" },
@@ -49,7 +50,7 @@ export const about = {
 
 
 
-// Ma liste de compétences!
+// Ma liste de compétences
 export const stackWeb = [
     { name: "React.js", icon: SiReact, color: "text-[#61DAFB]" },
     { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
@@ -115,7 +116,7 @@ export const certificationsDeveloppeur = {
 };
 export const webCertifications = certificationsDeveloppeur;
 
-//liste de mes compétences avec sujet, niveau de compétence (A) et niveau maximum (fullMark), pour une utilisation dans un graphique radar
+//liste de mes compétences avec sujet, niveau de compétence (A) et niveau maximum, pour une utilisation dans un graphique radar
 export const competencesDeveloppeur = {
     title: "Développement Web & Mobile",
     subtitle: "Compétences techniques affinées par des projets concrets et une formation rigoureuse",
@@ -134,7 +135,7 @@ export const DeveloperSkills = competencesDeveloppeur;
 //liste de mes projets de développement web et mobile, avec des titres, des descriptions, des technologies utilisées, des liens et des images pour chaque projet
 export const projetsDeveloppeur = {
     title: "Projets de Développement Web & Mobile",
-    subtitle: "Une sélection de projets démontrant ma capacité à concevoir et implémenter des solutions complètes",
+    subtitle: "Une sélection de projets illustrant la réalisation de solutions complètes",
     projects: [
 
         {
@@ -147,10 +148,10 @@ export const projetsDeveloppeur = {
         },
         {
             id: 2,
-            title: "Catalogue_musicale - SaaS Platform",
-            description: "Développement Front-end et backend d'une plateforme de catalogue musical. Gestion de l'option Karaoké et intégration d'une base de données pour les utilisateurs et les chansons.",
-            tech: ["C#", "GTK4", "SQLite", "Supabase"],
-            link: "https://github.com/Hcarmelle7/Catalogue_musicale",
+            title: "Music Player",
+            description: "Développement Front-end et backend d'une plateforme de lecture et catalogue musical. Gestion de l'option Karaoké et intégration d'une base de données pour les utilisateurs et les chansons.",
+            tech: ["C", "GTK4", "SQLite", "Supabase"],
+            link: "https://github.com/Hcarmelle7/Music-Player",
             image: "/images/musicaly.webp"
         },
         {
@@ -161,6 +162,16 @@ export const projetsDeveloppeur = {
             link: "https://github.com/Hcarmelle7/Artconnect_Frontend",
             image: "/images/artify.webp"
         },
+        {
+            id: 4,
+            title: "Portfolio - Site Web Interactif",
+            description: "Conception et développement de mon portfolio personnel moderne avec mode sombre, glassmorphism et animations interactives.",
+            tech: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
+            link: "https://github.com/Hcarmelle7/Monportfolio",
+            liveLink: "https://carmelledev.vercel.app",
+            image: "/images/portfolio.webp"
+        },
+
     ]
 };
 export const devProjects = projetsDeveloppeur;
@@ -215,7 +226,8 @@ export const projetsEmbarque = {
                 "I2C / PWM"
             ],
             icon: "Cpu",
-            demoLink: "/demo"
+            demoLink: "/demo",
+            githubLink: "https://github.com/Hcarmelle7/Smart-Energy-Guardian"
         },
         {
             title: "Drone de détection de nids-de-poule",
@@ -226,8 +238,21 @@ export const projetsEmbarque = {
                 "Asservissement et stabilité du vol",
                 "Interfaçage des capteurs de distance et caméras"
             ],
-            techStack: ["C++", "Microcontrôleurs", "Capteurs IR/Ultrasons", "Électronique embarquée"],
-            icon: "Plane"
+            techStack: ["C++", "Microcontrôleurs", "Capteurs Ultrasons", "Électronique embarquée"],
+            icon: "Plane",
+            githubLink: "https://github.com/Hcarmelle7"
+        },
+        {
+            title: "Système de Backup Électrique Portatif",
+            context: "Projet de Licence Technologique",
+            description: "Étude et conception complète d'un système autonome de secours électrique, pensé pour être portatif et fiable en environnement isolé.",
+            objectives: [
+                "Dimensionnement des composants de puissance",
+                "Gestion de la charge/décharge (BMS)",
+                "Sécurisation du circuit électrique"
+            ],
+            techStack: ["Électrotechnique", "Électronique de puissance", "Proteus", "CAO"],
+            icon: "BatteryCharging"
         },
         {
             title: "Système de Backup Électrique Portatif",

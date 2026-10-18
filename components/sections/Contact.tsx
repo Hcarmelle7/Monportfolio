@@ -3,11 +3,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, User, Mail, MessageSquare, MapPin, Linkedin, Github, FileText } from "lucide-react";
-import { cvFiles } from "@/lib/cv";
-import { useProfile } from "@/context/ProfileContext";
+import { cvFile } from "@/lib/cv";
 
 export default function Contact() {
-  const { activeProfile } = useProfile();
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -32,7 +30,7 @@ export default function Contact() {
       icon: <FileText className="w-6 h-6" />,
       label: "CV",
       value: "Télécharger mon CV",
-      href: activeProfile === "embarque" ? cvFiles.embarque : cvFiles.developpeur,
+      href: cvFile,
       color: "from-purple-600 to-purple-800 hover:border-purple-400/50"
     }
   ];
