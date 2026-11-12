@@ -5,6 +5,7 @@ import Background from "@/components/ui/Background";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ProfileProvider } from "@/context/ProfileContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -98,15 +99,17 @@ export default function RootLayout({
       <body className={inter.className} >
         <Background />
         
-        <ProfileProvider>
-          <Navbar />
+        <LanguageProvider>
+          <ProfileProvider>
+            <Navbar />
 
-          <main>
-            {children}
-          </main>
+            <main>
+              {children}
+            </main>
 
-          <Footer />
-        </ProfileProvider>
+            <Footer />
+          </ProfileProvider>
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>
